@@ -104,6 +104,139 @@ h1{margin:0;font-size:clamp(48px,8.4vw,132px);line-height:.95;letter-spacing:-.0
 .pill{font-size:16px;display:flex;align-items:center;gap:12px;padding:16px 24px;border-radius:999px;background:var(--lime);color:var(--ink)}
 .foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:32px;padding-bottom:40px;font-size:13px;color:var(--ink-2)}
 
+/* preview trigger on tiles */
+.peek{position:absolute;top:20px;right:20px;z-index:2;display:flex;align-items:center;gap:8px;height:40px;padding:0 8px 0 14px;border-radius:999px;background:#111;color:#fff;font-size:12px;letter-spacing:.08em;text-transform:uppercase;transition:transform .35s cubic-bezier(.2,.9,.2,1.3)}
+.peek svg{transition:transform .35s cubic-bezier(.2,.9,.2,1.3)}
+.tile:hover .peek{transform:scale(1.06)}
+.tile:hover .peek svg{transform:rotate(90deg)}
+.tag{white-space:nowrap}
+
+/* preview dialog */
+html.lock{overflow:hidden}
+dialog.pv{position:fixed;inset:0;width:100vw;height:100dvh;max-width:none;max-height:none;margin:0;padding:16px;border:0;background:transparent;color:var(--ink);overflow:hidden}
+dialog.pv[open]{display:grid;place-items:center}
+dialog.pv::backdrop{background:transparent}
+.pv-scrim{position:fixed;inset:0;background:rgba(17,17,17,.62);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.pv-panel{position:relative;z-index:1;width:min(1200px,100%);height:min(760px,calc(100dvh - 32px));display:flex;border-radius:var(--r);overflow:hidden;background:var(--ground);box-shadow:0 40px 120px -20px rgba(0,0,0,.55)}
+.pv-close{position:absolute;top:16px;right:16px;z-index:3;width:48px;height:48px;border-radius:50%;border:0;background:#111;color:#fff;display:grid;place-items:center;cursor:pointer;transition:transform .3s cubic-bezier(.2,.9,.2,1.3)}
+.pv-close:hover{transform:rotate(90deg)}
+.pv-body{flex:1;min-width:0;display:flex}
+.pv-grid{flex:1;min-width:0;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}
+
+.pv-demo{background:var(--pc);color:var(--pi);padding:24px 28px 20px;display:flex;flex-direction:column;gap:16px;min-height:0}
+.pv-top{display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.pv-play{width:44px;height:44px;border-radius:50%;border:1.5px solid currentColor;background:transparent;color:inherit;display:grid;place-items:center;cursor:pointer}
+.pv-play .i-play{display:none}
+.paused .pv-play .i-play{display:block}
+.paused .pv-play .i-pause{display:none}
+.stage{flex:1;min-height:0;display:flex}
+.stage.center{justify-content:center;align-items:center}
+.cap{display:flex;gap:14px;align-items:baseline;min-height:54px;font-size:19px;font-weight:600;line-height:1.3;letter-spacing:-.01em}
+.cap-n{font-size:12px;letter-spacing:.08em;flex:none;opacity:.8}
+.segs{display:flex;gap:6px;margin-top:-8px}
+.seg{flex:1;height:32px;padding:0;border:0;background:none;color:inherit;cursor:pointer;display:flex;align-items:center}
+.seg span{display:block;width:100%;height:4px;border-radius:2px;background:color-mix(in srgb,currentColor 25%,transparent);overflow:hidden}
+.seg i{display:block;width:100%;height:100%;background:currentColor;transform:scaleX(0);transform-origin:left}
+.seg.done i{transform:scaleX(1)}
+.seg.on i{animation:segfill 3.8s linear forwards}
+.manual .seg.on i{transform:scaleX(1)}
+@keyframes segfill{to{transform:scaleX(1)}}
+.paused .seg.on i,.paused .scene.on,.paused .scene.on *{animation-play-state:paused !important}
+
+/* mock app window */
+.win{flex:1;min-width:0;display:flex;flex-direction:column;background:#fff;color:#111;border-radius:16px;overflow:hidden;box-shadow:0 24px 48px -24px rgba(0,0,0,.45);font-size:14px}
+.win-bar{display:flex;align-items:center;gap:6px;padding:10px 14px;background:#F2F0EB;border-bottom:1px solid #E2DED6;flex:none}
+.win-bar i{width:10px;height:10px;border-radius:50%;background:#D3CEC4}
+.win-url{margin-left:10px;flex:1;max-width:360px;font-size:11px;color:#5C5A55;background:#fff;border-radius:6px;padding:5px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.win-body{position:relative;flex:1;min-height:0;overflow:hidden}
+.phone{position:relative;width:290px;height:100%;max-height:540px;min-height:440px;border:10px solid #111;border-radius:42px;background:#fff;color:#111;overflow:hidden;box-shadow:0 30px 60px -24px rgba(0,0,0,.5);font-size:13px}
+.phone::before{content:"";position:absolute;top:8px;left:50%;width:84px;height:22px;margin-left:-42px;border-radius:12px;background:#111;z-index:2}
+.phone .scene{padding-top:44px}
+
+.scene{position:absolute;inset:0;padding:22px 24px;display:flex;flex-direction:column;justify-content:center;gap:12px;opacity:0;visibility:hidden;transform:translateY(14px) scale(.985);transition:opacity .4s,transform .6s cubic-bezier(.2,.8,.2,1),visibility 0s .4s}
+.scene.on{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+.ui-lab{font-family:'DM Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#5C5A55}
+.ui-h{font-size:22px;font-weight:800;letter-spacing:-.03em;line-height:1.05}
+.ui-input{border:1.5px solid #111;border-radius:10px;padding:10px 14px;font-family:'DM Mono',ui-monospace,monospace;font-size:14px;display:flex;align-items:center;min-height:46px;white-space:nowrap;overflow:hidden}
+.caret{width:2px;height:18px;background:#111;margin-left:2px;flex:none;animation:caret 1s steps(2) infinite}
+@keyframes caret{50%{opacity:0}}
+.ui-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:10px;font-weight:700;background:#111;color:#fff;align-self:flex-start}
+.ui-row{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid #EEEBE4}
+.f1{flex:1;min-width:0}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;border:1.5px solid #111;font-size:13px;font-weight:600;white-space:nowrap;background:#fff;color:#111}
+.chip.on{background:#111;color:#fff}
+.muted{color:#5C5A55}
+.num{font-family:'DM Mono',ui-monospace,monospace;font-size:13px}
+.bar-t{position:relative;height:8px;border-radius:4px;background:#EEEBE4;flex:1}
+.bar-t b{position:absolute;left:0;top:0;bottom:0;border-radius:4px;background:var(--c,#111)}
+.res{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;font-weight:800;font-size:13px;flex:none}
+.res.w{background:#D9F7E5;color:#136B39}.res.l{background:#FFE1DE;color:#A3231B}.res.d{background:#EEEBE4;color:#3B3A36}
+.cb{width:18px;height:18px;border-radius:5px;border:1.5px solid #111;display:grid;place-items:center;font-size:11px;background:#111;color:#fff;flex:none}
+.card{border-radius:14px;background:#F2F0EB;padding:14px}
+.board{position:relative;width:240px;height:240px;flex:none;border-radius:8px;overflow:hidden;background:repeating-conic-gradient(#E9EDFF 0 25%,#8C9DFF 0 50%) 0 0/60px 60px}
+.board .abs{position:absolute}
+
+/* scene animations: only run on the active step */
+.scene.on .a-up{animation:aUp .6s cubic-bezier(.2,.8,.2,1) var(--d,0s) both}
+@keyframes aUp{from{opacity:0;transform:translateY(14px)}}
+.scene.on .a-pop{animation:aPop .55s cubic-bezier(.3,1.6,.5,1) var(--d,0s) both}
+@keyframes aPop{from{opacity:0;transform:scale(.4)}}
+.scene.on .a-fade{animation:aFade .5s ease var(--d,0s) both}
+@keyframes aFade{from{opacity:0}}
+.scene.on .a-x{transform-origin:left;animation:aX .9s cubic-bezier(.7,0,.2,1) var(--d,0s) both}
+@keyframes aX{from{transform:scaleX(0)}}
+.scene.on .a-y{transform-origin:bottom;animation:aY .9s cubic-bezier(.7,0,.2,1) var(--d,0s) both}
+@keyframes aY{from{transform:scaleY(0)}}
+.scene.on .a-type{display:inline-block;overflow:hidden;white-space:nowrap;vertical-align:bottom;animation:aType 1.1s steps(var(--n)) var(--d,0s) both}
+@keyframes aType{from{width:0}to{width:calc(var(--n) * 1ch)}}
+.scene.on .a-draw{animation:aDraw 1.8s cubic-bezier(.6,0,.2,1) var(--d,0s) both}
+@keyframes aDraw{from{stroke-dasharray:1200;stroke-dashoffset:1200}to{stroke-dasharray:1200;stroke-dashoffset:0}}
+.scene.on .a-ring{animation:aRing 1.2s cubic-bezier(.7,0,.2,1) var(--d,0s) both}
+@keyframes aRing{from{stroke-dasharray:0 400}}
+.scene.on .a-move{animation:aMove .9s cubic-bezier(.7,0,.2,1) var(--d,0s) both}
+@keyframes aMove{from{transform:translate(var(--fx,0px),var(--fy,0px))}}
+.scene.on .a-left{animation:aLeft 1.1s cubic-bezier(.7,0,.2,1) var(--d,0s) both}
+@keyframes aLeft{from{left:var(--from,0%)}}
+.scene.on .a-flash{animation:aFlash .8s ease var(--d,0s) 2}
+@keyframes aFlash{50%{background:#C8F23C}}
+.scene.on .a-check{animation:aCheck .3s ease var(--d,0s) both}
+@keyframes aCheck{from{background:#fff;color:#fff}}
+.scene.on .a-sel{animation:aSel .3s ease var(--d,0s) both}
+@keyframes aSel{from{background:#fff;color:#111}}
+.scene.on .a-dim{animation:aDim .5s ease var(--d,0s) forwards}
+@keyframes aDim{to{opacity:.12;transform:scale(.7)}}
+
+/* info column */
+.pv-info{padding:40px 40px 32px;overflow:auto;overscroll-behavior:contain;display:flex;flex-direction:column}
+.pv-info .tag{padding-right:56px}
+.pv-info h2{margin:14px 0 0;font-size:clamp(40px,4vw,60px);line-height:.92;letter-spacing:-.045em;font-weight:800}
+.lede{margin:18px 0 0;font-size:18px;line-height:1.5;color:var(--ink-2)}
+.pv-info h3{margin:30px 0 12px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:500}
+.feats{list-style:none;margin:0;padding:0;counter-reset:f;display:flex;flex-direction:column;gap:2px}
+.feats li{counter-increment:f;display:grid;grid-template-columns:40px minmax(0,1fr);gap:14px;padding:12px 0;border-top:1.5px solid #D9D5CC;font-size:16px;line-height:1.45;color:var(--ink-2)}
+.feats li::before{content:counter(f,decimal-leading-zero);font-family:'DM Mono',ui-monospace,monospace;font-size:12px;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--pc);color:var(--pi);border:1.5px solid #111}
+.feats b{display:block;color:var(--ink);font-size:17px;margin-bottom:2px}
+.stack{display:flex;flex-wrap:wrap;gap:8px}
+.stack span{font-family:'DM Mono',ui-monospace,monospace;font-size:13px;padding:8px 12px;border-radius:999px;border:1.5px solid #111}
+.pv-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px;padding-top:4px}
+.go,.ghost,.soon{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 22px;border-radius:999px;font-weight:700;font-size:16px}
+.go{background:#111;color:#fff;transition:transform .25s}
+.go:hover{transform:translateY(-2px)}
+.ghost{border:1.5px solid #111}
+.ghost:hover{background:#111;color:var(--ground)}
+.soon{border:1.5px dashed #6E6B64;color:var(--ink-2);font-weight:600}
+.beta-note{margin:16px 0 0;font-size:14px;line-height:1.5;color:var(--ink-2)}
+
+@media (max-width:900px){
+  dialog.pv{padding:0}
+  .pv-panel{height:100dvh;border-radius:0;overflow:auto;display:block}
+  .pv-body{display:block}
+  .pv-grid{display:block}
+  .pv-demo{padding:72px 16px 16px}
+  .stage{min-height:420px;flex:none}
+  .pv-info{padding:28px 20px 40px;overflow:visible}
+  .pv-close{position:fixed;top:12px;right:12px}
+}
 @media (max-width:860px){
   .bento{grid-template-columns:minmax(0,1fr);grid-auto-rows:auto}
   .s42,.s22,.s32,.s31{grid-column:auto;grid-row:auto;min-height:380px}
@@ -137,7 +270,7 @@ h1{margin:0;font-size:clamp(48px,8.4vw,132px);line-height:.95;letter-spacing:-.0
     <span class="sr">apps and tools.</span>
   </h1>
   <div class="hero-foot">
-    <p>Every tile below is a tiny working preview of the real thing. Hover to wake one up, click to open it.</p>
+    <p>Every tile below is a tiny working preview of the real thing. Hover to wake one up, click to preview it.</p>
     <div class="legend mono">
       <span><span class="dot live"></span>live</span>
       <span><span class="dot beta"></span>in beta</span>
@@ -148,7 +281,7 @@ h1{margin:0;font-size:clamp(48px,8.4vw,132px);line-height:.95;letter-spacing:-.0
 <section id="work" class="wrap bento" aria-label="Projects">
 
   <!-- 01 Blunder Lab -->
-  <a href="https://robbiestells.github.io/blunder-lab/" class="tile s42 reveal" style="background:var(--blue);color:#fff;flex-direction:row;flex-wrap:wrap;gap:32px">
+  <a href="https://robbiestells.github.io/blunder-lab/" data-preview="blunder-lab" class="tile s42 reveal" style="background:var(--blue);color:#fff;flex-direction:row;flex-wrap:wrap;gap:32px">
     <div style="flex:1 1 280px;display:flex;flex-direction:column;justify-content:space-between;min-width:0">
       <div>
         <div class="tag mono"><span class="dot beta pulse"></span>01 · CHESS · IN BETA</div>
@@ -168,12 +301,12 @@ h1{margin:0;font-size:clamp(48px,8.4vw,132px);line-height:.95;letter-spacing:-.0
       <div class="blund mono" style="position:absolute;left:290px;top:190px;background:#FF3B30;color:#fff;font-weight:500;font-size:22px;padding:6px 12px;border-radius:10px">??</div>
       <div class="mono" style="position:absolute;right:-8px;bottom:12px;background:#111;color:#fff;font-size:13px;padding:10px 14px;border-radius:10px">Find the better move</div>
     </div>
-    <span class="open" aria-hidden="true">↗</span>
+    <span class="peek mono">Preview <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C8F23C"/><path d="M12 7v10M7 12h10" stroke="#111" stroke-width="2"/></svg></span>
     <span class="shine"></span>
   </a>
 
   <!-- 02 Dividend Buy Planner -->
-  <a href="https://robbiestells.github.io/dividend-buy-planner/" class="tile s22 reveal" style="background:var(--lime);color:var(--ink);justify-content:space-between">
+  <a href="https://robbiestells.github.io/dividend-buy-planner/" data-preview="dividend-buy-planner" class="tile s22 reveal" style="background:var(--lime);color:var(--ink);justify-content:space-between">
     <div>
       <div class="tag mono"><span class="dot beta pulse"></span>02 · FINANCE · IN BETA</div>
       <h2 style="font-size:clamp(36px,3.4vw,52px)">Dividend Buy Planner</h2>
@@ -189,12 +322,12 @@ h1{margin:0;font-size:clamp(48px,8.4vw,132px);line-height:.95;letter-spacing:-.0
       <div class="bar" style="flex:1;height:48%;background:#111;opacity:.18;border-radius:6px 6px 0 0;animation-delay:-2s"></div>
       <div class="bar" style="flex:1;height:64%;background:#111;opacity:.18;border-radius:6px 6px 0 0;animation-delay:-2.6s"></div>
     </div>
-    <span class="open" aria-hidden="true">↗</span>
+    <span class="peek mono">Preview <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C8F23C"/><path d="M12 7v10M7 12h10" stroke="#111" stroke-width="2"/></svg></span>
     <span class="shine"></span>
   </a>
 
   <!-- 03 Mise en Place -->
-  <a href="https://robbiestells.github.io/recipe-book/" class="tile s32 reveal" style="background:var(--tomato);color:#1A0E0A;justify-content:space-between">
+  <a href="https://robbiestells.github.io/recipe-book/" data-preview="mise-en-place" class="tile s32 reveal" style="background:var(--tomato);color:#1A0E0A;justify-content:space-between">
     <div>
       <div class="tag mono"><span class="dot beta pulse"></span>03 · FOOD · IN BETA</div>
       <h2 style="font-size:clamp(44px,4.4vw,68px)">Mise en Place</h2>
@@ -227,12 +360,12 @@ h1{margin:0;font-size:clamp(48px,8.4vw,132px);line-height:.95;letter-spacing:-.0
         </div>
       </div>
     </div>
-    <span class="open" aria-hidden="true">↗</span>
+    <span class="peek mono">Preview <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C8F23C"/><path d="M12 7v10M7 12h10" stroke="#111" stroke-width="2"/></svg></span>
     <span class="shine"></span>
   </a>
 
   <!-- 04 compareme -->
-  <a href="https://github.com/robbiestells" data-todo="compareme URL" class="tile s31 reveal" style="background:var(--pink);color:#1F0A17;flex-direction:row;flex-wrap:wrap;gap:24px;align-items:stretch">
+  <a href="https://github.com/robbiestells" data-todo="compareme URL" data-preview="compareme" class="tile s31 reveal" style="background:var(--pink);color:#1F0A17;flex-direction:row;flex-wrap:wrap;gap:24px;align-items:stretch">
     <div style="flex:1 1 220px;display:flex;flex-direction:column;justify-content:space-between">
       <div class="tag mono"><span class="dot beta pulse"></span>04 · SOCIAL · IN BETA</div>
       <div>
@@ -247,12 +380,12 @@ h1{margin:0;font-size:clamp(48px,8.4vw,132px);line-height:.95;letter-spacing:-.0
         <span style="width:3px;height:110px;background:#1F0A17"></span>
       </div>
     </div>
-    <span class="open" aria-hidden="true">↗</span>
+    <span class="peek mono">Preview <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C8F23C"/><path d="M12 7v10M7 12h10" stroke="#111" stroke-width="2"/></svg></span>
     <span class="shine"></span>
   </a>
 
   <!-- 05 Spending Tracker -->
-  <a href="https://github.com/robbiestells" data-todo="Spending Tracker URL" class="tile s31 reveal" style="background:var(--white);color:var(--ink);flex-direction:row;flex-wrap:wrap;gap:24px;align-items:stretch">
+  <a href="https://robbiestells.github.io/budgetrunway/" data-preview="spending-tracker" class="tile s31 reveal" style="background:var(--white);color:var(--ink);flex-direction:row;flex-wrap:wrap;gap:24px;align-items:stretch">
     <div style="flex:1 1 220px;display:flex;flex-direction:column;justify-content:space-between">
       <div class="tag mono"><span class="dot beta pulse"></span>05 · FINANCE · IN BETA</div>
       <div>
@@ -268,7 +401,7 @@ h1{margin:0;font-size:clamp(48px,8.4vw,132px);line-height:.95;letter-spacing:-.0
         <circle class="ring" cx="95" cy="95" r="62" fill="none" stroke="#C8F23C" stroke-width="26" style="--len:70;transform:rotate(265deg);transform-origin:95px 95px;animation-delay:-1.2s"/>
       </svg>
     </div>
-    <span class="open" aria-hidden="true">↗</span>
+    <span class="peek mono">Preview <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C8F23C"/><path d="M12 7v10M7 12h10" stroke="#111" stroke-width="2"/></svg></span>
     <span class="shine"></span>
   </a>
 </section>
@@ -287,6 +420,404 @@ h1{margin:0;font-size:clamp(48px,8.4vw,132px);line-height:.95;letter-spacing:-.0
   <span>Hosted on GitHub Pages</span>
 </footer>
 
+<!-- ============ PREVIEW DIALOG ============ -->
+<dialog class="pv" id="pv" aria-labelledby="pv-title">
+  <div class="pv-scrim"></div>
+  <div class="pv-panel">
+    <button class="pv-close" type="button" aria-label="Close preview">
+      <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+    </button>
+    <div class="pv-body"></div>
+  </div>
+</dialog>
+
+<!-- Each template = one preview. Scenes play in order; data-cap is the caption under the demo. -->
+
+<!-- ---------- Blunder Lab ---------- -->
+<template id="pv-blunder-lab">
+<div class="pv-grid" style="--pc:#2F4BFF;--pi:#FFFFFF">
+  <div class="pv-demo">
+    <div class="pv-top mono"><span>Demo · sample data</span>
+      <button class="pv-play" type="button" aria-label="Pause demo"><svg class="i-pause" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="1" width="3.5" height="12" rx="1" fill="currentColor"/><rect x="8.5" y="1" width="3.5" height="12" rx="1" fill="currentColor"/></svg><svg class="i-play" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5l9 5.5-9 5.5z" fill="currentColor"/></svg></button>
+    </div>
+    <div class="stage">
+      <div class="win" aria-hidden="true">
+        <div class="win-bar"><i></i><i></i><i></i><span class="win-url mono">robbiestells.github.io/blunder-lab</span></div>
+        <div class="win-body">
+          <div class="scene" data-cap="Enter a chess.com username and pull in your games.">
+            <div class="ui-h a-up">Let's look at your games.</div>
+            <div class="ui-lab a-up" style="--d:.1s;margin-top:8px">chess.com username</div>
+            <div class="ui-input a-up" style="--d:.15s;max-width:360px"><span class="a-type" style="--n:13;--d:.5s">your_username</span><span class="caret"></span></div>
+            <span class="ui-btn a-pop" style="--d:1.8s;background:#2F4BFF">Pull my games →</span>
+          </div>
+          <div class="scene" data-cap="Your recent games load in, each with an accuracy score.">
+            <div style="display:flex;justify-content:space-between;align-items:center"><span class="ui-lab">Recent games</span><span class="chip a-pop" style="--d:1.4s">5 loaded</span></div>
+            <div class="ui-row a-up" style="--d:.1s"><span class="res w">W</span><span class="f1">vs. Opponent A</span><span class="bar-t" style="max-width:140px;--c:#2F4BFF"><b class="a-x" style="width:84%;--d:.4s"></b></span><span class="num">84%</span></div>
+            <div class="ui-row a-up" style="--d:.25s"><span class="res l">L</span><span class="f1">vs. Opponent B</span><span class="bar-t" style="max-width:140px;--c:#2F4BFF"><b class="a-x" style="width:61%;--d:.55s"></b></span><span class="num">61%</span></div>
+            <div class="ui-row a-up" style="--d:.4s"><span class="res w">W</span><span class="f1">vs. Opponent C</span><span class="bar-t" style="max-width:140px;--c:#2F4BFF"><b class="a-x" style="width:78%;--d:.7s"></b></span><span class="num">78%</span></div>
+            <div class="ui-row a-up" style="--d:.55s"><span class="res d">D</span><span class="f1">vs. Opponent D</span><span class="bar-t" style="max-width:140px;--c:#2F4BFF"><b class="a-x" style="width:72%;--d:.85s"></b></span><span class="num">72%</span></div>
+            <div class="ui-row a-up" style="--d:.7s"><span class="res l">L</span><span class="f1">vs. Opponent E</span><span class="bar-t" style="max-width:140px;--c:#2F4BFF"><b class="a-x" style="width:55%;--d:1s"></b></span><span class="num">55%</span></div>
+          </div>
+          <div class="scene" data-cap="Every blunder becomes a puzzle. Find the move you missed.">
+            <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:center">
+              <div class="board a-pop">
+                <span class="abs a-fade" style="left:120px;top:120px;width:30px;height:30px;background:rgba(200,242,60,.9);--d:1.3s"></span>
+                <span class="abs a-fade" style="left:90px;top:180px;width:30px;height:30px;background:rgba(255,59,48,.35);--d:.5s"></span>
+                <svg class="abs a-move" style="left:120px;top:120px;--fx:-30px;--fy:60px;--d:1.6s" width="30" height="30" viewBox="0 0 60 60"><path d="M18 50h26l-3-8c6-6 7-14 3-22-4-8-12-11-18-9l2 5-9 9 3 4 6-3c-2 6-6 10-10 16z" fill="#111"/></svg>
+                <span class="abs mono a-pop" style="left:108px;top:160px;background:#FF3B30;color:#fff;font-size:12px;padding:1px 6px;border-radius:6px;--d:.6s">??</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:12px;max-width:220px">
+                <span class="ui-lab a-up" style="--d:.2s">Puzzle from your game</span>
+                <span class="ui-h a-up" style="--d:.3s">You blundered here. Find the better move.</span>
+                <span class="chip on a-pop" style="--d:2.5s;align-self:flex-start;background:#1F9D55;border-color:#1F9D55">✓ Solved</span>
+              </div>
+            </div>
+          </div>
+          <div class="scene" data-cap="Rating and accuracy are charted over time, so you can see yourself improve.">
+            <div style="display:flex;gap:12px">
+              <div class="card f1 a-up"><div class="ui-lab">Accuracy</div><div class="ui-h" style="font-size:19px;margin-top:6px">Trending up ↑</div></div>
+              <div class="card f1 a-up" style="--d:.15s"><div class="ui-lab">Rating</div><div class="ui-h" style="font-size:19px;margin-top:6px">Trending up ↑</div></div>
+            </div>
+            <svg viewBox="0 0 400 170" preserveAspectRatio="none" style="width:100%;height:190px">
+              <path d="M0 42H400M0 85H400M0 128H400" stroke="#EEEBE4" stroke-width="1" vector-effect="non-scaling-stroke"/>
+              <polyline class="a-draw" style="--d:.3s" points="0,150 40,138 80,142 120,120 160,126 200,100 240,104 280,78 320,82 360,56 400,40" fill="none" stroke="#2F4BFF" stroke-width="3" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+              <polyline class="a-draw" style="--d:.6s" points="0,130 40,132 80,120 120,124 160,108 200,112 240,96 280,98 320,84 360,80 400,66" fill="none" stroke="#111" stroke-width="2" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+            </svg>
+            <div class="mono" style="display:flex;gap:18px;font-size:12px"><span style="display:flex;align-items:center;gap:6px"><i style="width:14px;height:3px;background:#2F4BFF"></i>Accuracy</span><span style="display:flex;align-items:center;gap:6px"><i style="width:14px;height:2px;background:#111"></i>Rating</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cap" aria-live="polite"><span class="cap-n mono"></span><span class="cap-t"></span></div>
+    <div class="segs"></div>
+  </div>
+  <div class="pv-info">
+    <div class="tag mono"><span class="dot beta pulse"></span>In beta · Chess</div>
+    <h2 id="pv-title">Blunder Lab</h2>
+    <p class="lede">Blunder Lab connects to your chess.com games and finds the moments where things went wrong. Each mistake becomes a puzzle, so instead of replaying whole games you drill the exact positions that cost you. Over time it charts your rating and accuracy, so you can see whether the practice is paying off.</p>
+    <h3 class="mono">What it does</h3>
+    <ol class="feats">
+      <li><span><b>Pulls in your games</b>Enter a chess.com username and your games load automatically. Nothing to export or upload.</span></li>
+      <li><span><b>Turns mistakes into puzzles</b>Every blunder becomes a position to solve: find the move you should have played.</span></li>
+      <li><span><b>Shows how you're improving</b>Rating and accuracy are tracked across your games and charted over time.</span></li>
+    </ol>
+    <h3 class="mono">Built with</h3>
+    <div class="stack"><span>chess.com game data</span><span>GitHub Pages</span></div>
+    <div class="pv-cta">
+      <a class="go" href="https://robbiestells.github.io/blunder-lab/">Open the beta ↗</a>
+      <a class="ghost" href="https://github.com/robbiestells/blunder-lab">View the code</a>
+    </div>
+    <p class="beta-note">It's in beta, so expect a few rough edges while it's being built out.</p>
+  </div>
+</div>
+</template>
+
+<!-- ---------- Dividend Buy Planner ---------- -->
+<template id="pv-dividend-buy-planner">
+<div class="pv-grid" style="--pc:#C8F23C;--pi:#111111">
+  <div class="pv-demo">
+    <div class="pv-top mono"><span>Demo · sample data</span>
+      <button class="pv-play" type="button" aria-label="Pause demo"><svg class="i-pause" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="1" width="3.5" height="12" rx="1" fill="currentColor"/><rect x="8.5" y="1" width="3.5" height="12" rx="1" fill="currentColor"/></svg><svg class="i-play" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5l9 5.5-9 5.5z" fill="currentColor"/></svg></button>
+    </div>
+    <div class="stage">
+      <div class="win" aria-hidden="true">
+        <div class="win-bar"><i></i><i></i><i></i><span class="win-url mono">robbiestells.github.io/dividend-buy-planner</span></div>
+        <div class="win-body">
+          <div class="scene" data-cap="It pulls live prices for each fund you hold.">
+            <div style="display:flex;justify-content:space-between;align-items:center"><span class="ui-lab">Your funds</span><span class="chip a-pop" style="--d:.2s"><span class="dot live pulse"></span>Live prices</span></div>
+            <div class="ui-row a-up" style="--d:.1s"><span class="f1" style="font-weight:700">Fund A</span><span class="num a-flash" style="--d:.8s;padding:2px 6px;border-radius:4px">$24.10</span></div>
+            <div class="ui-row a-up" style="--d:.2s"><span class="f1" style="font-weight:700">Fund B</span><span class="num a-flash" style="--d:1.1s;padding:2px 6px;border-radius:4px">$51.32</span></div>
+            <div class="ui-row a-up" style="--d:.3s"><span class="f1" style="font-weight:700">Fund C</span><span class="num a-flash" style="--d:1.4s;padding:2px 6px;border-radius:4px">$18.77</span></div>
+            <div class="ui-row a-up" style="--d:.4s"><span class="f1" style="font-weight:700">Fund D</span><span class="num a-flash" style="--d:1.7s;padding:2px 6px;border-radius:4px">$33.05</span></div>
+          </div>
+          <div class="scene" data-cap="It checks where each price sits between its recent low and high.">
+            <div style="display:flex;justify-content:space-between" class="ui-lab"><span>Recent range</span><span>low ← → high</span></div>
+            <div class="ui-row"><span style="width:64px;font-weight:700">Fund A</span><span class="bar-t"><b class="a-left" style="position:absolute;left:72%;top:-5px;width:18px;height:18px;border-radius:50%;background:#111;--d:.2s"></b></span></div>
+            <div class="ui-row"><span style="width:64px;font-weight:700">Fund B</span><span class="bar-t"><b class="a-left" style="position:absolute;left:86%;top:-5px;width:18px;height:18px;border-radius:50%;background:#111;--d:.35s"></b></span></div>
+            <div class="ui-row"><span style="width:64px;font-weight:700">Fund C</span><span class="bar-t"><b class="a-left" style="position:absolute;left:10%;top:-5px;width:18px;height:18px;border-radius:50%;background:#1F9D55;--d:.5s;--from:50%"></b></span><span class="chip a-pop" style="--d:1.6s;font-size:11px;padding:3px 8px">Near low</span></div>
+            <div class="ui-row"><span style="width:64px;font-weight:700">Fund D</span><span class="bar-t"><b class="a-left" style="position:absolute;left:48%;top:-5px;width:18px;height:18px;border-radius:50%;background:#111;--d:.65s"></b></span></div>
+          </div>
+          <div class="scene" data-cap="It weighs in what each fund has paid out recently.">
+            <span class="ui-lab">Recent payouts</span>
+            <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;align-items:end;padding-bottom:4px">
+              <div style="display:flex;flex-direction:column;gap:8px"><div style="display:flex;align-items:flex-end;gap:4px;height:150px"><i class="a-y" style="flex:1;height:50%;background:#111;--d:.1s"></i><i class="a-y" style="flex:1;height:55%;background:#111;--d:.15s"></i><i class="a-y" style="flex:1;height:48%;background:#111;--d:.2s"></i><i class="a-y" style="flex:1;height:52%;background:#111;--d:.25s"></i></div><span class="num">Fund A</span></div>
+              <div style="display:flex;flex-direction:column;gap:8px"><div style="display:flex;align-items:flex-end;gap:4px;height:150px"><i class="a-y" style="flex:1;height:35%;background:#111;--d:.3s"></i><i class="a-y" style="flex:1;height:38%;background:#111;--d:.35s"></i><i class="a-y" style="flex:1;height:33%;background:#111;--d:.4s"></i><i class="a-y" style="flex:1;height:36%;background:#111;--d:.45s"></i></div><span class="num">Fund B</span></div>
+              <div style="display:flex;flex-direction:column;gap:8px"><div style="display:flex;align-items:flex-end;gap:4px;height:150px"><i class="a-y" style="flex:1;height:70%;background:#1F9D55;--d:.5s"></i><i class="a-y" style="flex:1;height:76%;background:#1F9D55;--d:.55s"></i><i class="a-y" style="flex:1;height:80%;background:#1F9D55;--d:.6s"></i><i class="a-y" style="flex:1;height:88%;background:#1F9D55;--d:.65s"></i></div><span class="num">Fund C</span></div>
+              <div style="display:flex;flex-direction:column;gap:8px"><div style="display:flex;align-items:flex-end;gap:4px;height:150px"><i class="a-y" style="flex:1;height:58%;background:#111;--d:.7s"></i><i class="a-y" style="flex:1;height:54%;background:#111;--d:.75s"></i><i class="a-y" style="flex:1;height:60%;background:#111;--d:.8s"></i><i class="a-y" style="flex:1;height:57%;background:#111;--d:.85s"></i></div><span class="num">Fund D</span></div>
+            </div>
+          </div>
+          <div class="scene" data-cap="Then it names the one fund to buy today.">
+            <div class="a-pop" style="background:#111;color:#fff;border-radius:16px;padding:22px;display:flex;justify-content:space-between;align-items:center;gap:16px">
+              <div><div class="ui-lab" style="color:#C8F23C">Today's pick</div><div class="ui-h" style="font-size:40px;margin-top:6px">Fund C</div></div>
+              <span class="mono a-pop" style="--d:.5s;background:#C8F23C;color:#111;font-size:16px;padding:10px 16px;border-radius:10px">BUY</span>
+            </div>
+            <div class="ui-row a-up" style="--d:.8s"><span class="cb a-check" style="--d:1s">✓</span>Trading near its recent low</div>
+            <div class="ui-row a-up" style="--d:1.1s"><span class="cb a-check" style="--d:1.3s">✓</span>Strong recent payouts</div>
+            <div class="ui-row a-up" style="--d:1.4s"><span class="cb a-check" style="--d:1.6s">✓</span>Based on live prices</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cap" aria-live="polite"><span class="cap-n mono"></span><span class="cap-t"></span></div>
+    <div class="segs"></div>
+  </div>
+  <div class="pv-info">
+    <div class="tag mono"><span class="dot beta pulse"></span>In beta · Finance</div>
+    <h2 id="pv-title">Dividend Buy Planner</h2>
+    <p class="lede">When it's time to put new money into a dividend portfolio, the hard part is deciding which fund gets it. Dividend Buy Planner pulls live market data for each fund, looks at where the price sits against its recent high and low, weighs what each fund has paid out lately, and recommends the one to buy that day.</p>
+    <h3 class="mono">What it does</h3>
+    <ol class="feats">
+      <li><span><b>Live market data</b>Current prices are pulled automatically, so the recommendation reflects today's market, not yesterday's spreadsheet.</span></li>
+      <li><span><b>Price vs. recent range</b>It sees which funds are trading near their recent lows and which are near their highs.</span></li>
+      <li><span><b>Recent payouts</b>Each fund's latest distributions are factored into the call.</span></li>
+      <li><span><b>One clear pick</b>Instead of a wall of numbers, you get a single recommendation for your purchase day.</span></li>
+    </ol>
+    <h3 class="mono">Built with</h3>
+    <div class="stack"><span>Live market data</span><span>GitHub Pages</span></div>
+    <div class="pv-cta">
+      <a class="go" href="https://robbiestells.github.io/dividend-buy-planner/">Open the beta ↗</a>
+      <a class="ghost" href="https://github.com/robbiestells/dividend-buy-planner">View the code</a>
+    </div>
+    <p class="beta-note">It's in beta and for personal planning only, not financial advice.</p>
+  </div>
+</div>
+</template>
+
+<!-- ---------- Mise en Place ---------- -->
+<template id="pv-mise-en-place">
+<div class="pv-grid" style="--pc:#FF5A36;--pi:#1A0E0A">
+  <div class="pv-demo">
+    <div class="pv-top mono"><span>Demo · sample data</span>
+      <button class="pv-play" type="button" aria-label="Pause demo"><svg class="i-pause" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="1" width="3.5" height="12" rx="1" fill="currentColor"/><rect x="8.5" y="1" width="3.5" height="12" rx="1" fill="currentColor"/></svg><svg class="i-play" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5l9 5.5-9 5.5z" fill="currentColor"/></svg></button>
+    </div>
+    <div class="stage">
+      <div class="win" aria-hidden="true">
+        <div class="win-bar"><i></i><i></i><i></i><span class="win-url mono">robbiestells.github.io/recipe-book</span></div>
+        <div class="win-body">
+          <div class="scene" data-cap="Drop in a screenshot of a recipe, or paste a link from a recipe site.">
+            <span class="ui-lab">Add a recipe</span>
+            <div class="a-up" style="height:180px;border:2px dashed #1A0E0A;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:#FFF4EC">
+              <div class="a-move" style="--fy:-60px;--d:.3s;width:70px;height:86px;border-radius:8px;background:#fff;border:2px solid #1A0E0A;display:flex;flex-direction:column;gap:6px;padding:10px"><i style="height:22px;background:#FFD8C4;border-radius:4px"></i><i style="height:5px;background:#E2D5CC"></i><i style="height:5px;width:70%;background:#E2D5CC"></i></div>
+              <span style="font-weight:700">Drop a screenshot</span>
+            </div>
+            <div class="ui-lab a-fade" style="text-align:center;--d:.9s">or paste a link</div>
+            <div class="ui-input a-up" style="--d:1s"><span class="a-type" style="--n:24;--d:1.3s">recipes.example.com/chili</span><span class="caret"></span></div>
+          </div>
+          <div class="scene" data-cap="The ingredients and steps are captured for you automatically.">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:12px"><span class="ui-h a-up">Weeknight Chili</span><span class="chip a-pop" style="--d:.4s;background:#FF5A36;border-color:#FF5A36;color:#1A0E0A">✦ Captured</span></div>
+            <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:20px">
+              <div style="display:flex;flex-direction:column;gap:8px"><span class="ui-lab">Ingredients</span>
+                <span class="a-up" style="--d:.5s">1 lb ground beef</span><span class="a-up" style="--d:.65s">1 onion, diced</span><span class="a-up" style="--d:.8s">2 cans kidney beans</span><span class="a-up" style="--d:.95s">1 can crushed tomatoes</span><span class="a-up" style="--d:1.1s">2 tbsp chili powder</span></div>
+              <div style="display:flex;flex-direction:column;gap:8px"><span class="ui-lab">Steps</span>
+                <span class="a-up" style="--d:1.3s">1. Brown the beef with the onion.</span><span class="a-up" style="--d:1.45s">2. Stir in the spices.</span><span class="a-up" style="--d:1.6s">3. Add beans and tomatoes.</span><span class="a-up" style="--d:1.75s">4. Simmer for 30 minutes.</span></div>
+            </div>
+          </div>
+          <div class="scene" data-cap="Sort recipes into categories, favorite the keepers, and plan the week.">
+            <div style="display:flex;flex-wrap:wrap;gap:8px"><span class="chip a-pop">Dinner</span><span class="chip a-pop" style="--d:.1s">Quick</span><span class="chip on a-sel" style="--d:.5s">★ Favorites</span></div>
+            <div style="height:210px;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;font-size:12px">
+              <div style="display:flex;flex-direction:column;gap:6px"><span class="ui-lab">Mon</span><div class="card" style="flex:1;padding:6px"><span class="chip on a-pop" style="--d:.8s;font-size:11px;padding:4px 6px;width:100%;overflow:hidden;text-overflow:ellipsis;display:block;background:#FF5A36;border-color:#FF5A36;color:#1A0E0A">Chili</span></div></div>
+              <div style="display:flex;flex-direction:column;gap:6px"><span class="ui-lab">Tue</span><div class="card" style="flex:1;padding:6px"></div></div>
+              <div style="display:flex;flex-direction:column;gap:6px"><span class="ui-lab">Wed</span><div class="card" style="flex:1;padding:6px"><span class="chip on a-pop" style="--d:1.1s;font-size:11px;padding:4px 6px;width:100%;overflow:hidden;text-overflow:ellipsis;display:block">Stir-fry</span></div></div>
+              <div style="display:flex;flex-direction:column;gap:6px"><span class="ui-lab">Thu</span><div class="card" style="flex:1;padding:6px"><span class="chip on a-pop" style="--d:1.4s;font-size:11px;padding:4px 6px;width:100%;overflow:hidden;text-overflow:ellipsis;display:block;background:#FF5A36;border-color:#FF5A36;color:#1A0E0A">Tacos</span></div></div>
+              <div style="display:flex;flex-direction:column;gap:6px"><span class="ui-lab">Fri</span><div class="card" style="flex:1;padding:6px"></div></div>
+              <div style="display:flex;flex-direction:column;gap:6px"><span class="ui-lab">Sat</span><div class="card" style="flex:1;padding:6px"><span class="chip on a-pop" style="--d:1.7s;font-size:11px;padding:4px 6px;width:100%;overflow:hidden;text-overflow:ellipsis;display:block">Pasta</span></div></div>
+              <div style="display:flex;flex-direction:column;gap:6px"><span class="ui-lab">Sun</span><div class="card" style="flex:1;padding:6px"></div></div>
+            </div>
+          </div>
+          <div class="scene" data-cap="The week's recipes turn into one shopping list.">
+            <div style="display:flex;justify-content:space-between;align-items:center"><span class="ui-h">Shopping list</span><span class="chip a-pop" style="--d:.2s">This week</span></div>
+            <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 24px">
+              <div style="display:flex;flex-direction:column"><span class="ui-lab" style="margin:6px 0">Produce</span>
+                <div class="ui-row a-up" style="--d:.2s"><span class="cb a-check" style="--d:1.2s">✓</span>Onions</div>
+                <div class="ui-row a-up" style="--d:.3s"><span class="cb a-check" style="--d:1.5s">✓</span>Bell peppers</div>
+                <div class="ui-row a-up" style="--d:.4s"><span class="cb a-check" style="--d:1.8s">✓</span>Limes</div></div>
+              <div style="display:flex;flex-direction:column"><span class="ui-lab" style="margin:6px 0">Pantry</span>
+                <div class="ui-row a-up" style="--d:.5s"><span class="cb a-check" style="--d:2.1s">✓</span>Kidney beans</div>
+                <div class="ui-row a-up" style="--d:.6s"><span class="cb a-check" style="--d:2.4s">✓</span>Crushed tomatoes</div>
+                <div class="ui-row a-up" style="--d:.7s"><span class="cb" style="background:#fff">&nbsp;</span>Pasta</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cap" aria-live="polite"><span class="cap-n mono"></span><span class="cap-t"></span></div>
+    <div class="segs"></div>
+  </div>
+  <div class="pv-info">
+    <div class="tag mono"><span class="dot beta pulse"></span>In beta · Food</div>
+    <h2 id="pv-title">Mise en Place</h2>
+    <p class="lede">A recipe book that handles the tedious parts. Grab a screenshot of a recipe or paste a link from a recipe site, and it captures the ingredients and steps for you. Sort what you save into categories, favorite the ones you keep coming back to, plan what you're cooking each day of the week, and get one shopping list for all of it.</p>
+    <h3 class="mono">What it does</h3>
+    <ol class="feats">
+      <li><span><b>Import from a screenshot or link</b>AI reads the recipe and pulls out the ingredients and steps, with no retyping.</span></li>
+      <li><span><b>Categories and favorites</b>Organize your collection and star the recipes you make again and again.</span></li>
+      <li><span><b>Weekly planner</b>Drop recipes onto the days you're cooking them.</span></li>
+      <li><span><b>Automatic shopping list</b>The week's picks become one combined list.</span></li>
+      <li><span><b>Saved to the cloud</b>Recipes and shopping lists are stored in a real database, not just your browser.</span></li>
+    </ol>
+    <h3 class="mono">Built with</h3>
+    <div class="stack"><span>Claude API</span><span>Supabase</span><span>GitHub Pages</span></div>
+    <div class="pv-cta">
+      <a class="go" href="https://robbiestells.github.io/recipe-book/">Open the beta ↗</a>
+      <a class="ghost" href="https://github.com/robbiestells/recipe-book">View the code</a>
+    </div>
+    <p class="beta-note">It's in beta, so expect a few rough edges while it's being built out.</p>
+  </div>
+</div>
+</template>
+
+<!-- ---------- compareme ---------- -->
+<template id="pv-compareme">
+<div class="pv-grid" style="--pc:#FF8AD0;--pi:#1F0A17">
+  <div class="pv-demo">
+    <div class="pv-top mono"><span>Demo · sample data</span>
+      <button class="pv-play" type="button" aria-label="Pause demo"><svg class="i-pause" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="1" width="3.5" height="12" rx="1" fill="currentColor"/><rect x="8.5" y="1" width="3.5" height="12" rx="1" fill="currentColor"/></svg><svg class="i-play" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5l9 5.5-9 5.5z" fill="currentColor"/></svg></button>
+    </div>
+    <div class="stage">
+      <div class="win" aria-hidden="true">
+        <div class="win-bar"><i></i><i></i><i></i><span class="win-url mono">compareme · prototype</span></div>
+        <div class="win-body">
+          <div class="scene" data-cap="Start with a few details about you, like age, gender and location.">
+            <span class="ui-h a-up">First, a bit about you</span>
+            <div class="ui-row a-up" style="--d:.2s"><span class="ui-lab" style="width:90px">Age</span><span class="chip">25–29</span><span class="chip on a-sel" style="--d:.7s">30–34</span><span class="chip">35–39</span></div>
+            <div class="ui-row a-up" style="--d:.35s"><span class="ui-lab" style="width:90px">Gender</span><span class="chip">Woman</span><span class="chip">Man</span><span class="chip on a-sel" style="--d:1.1s">Prefer not to say</span></div>
+            <div class="ui-row a-up" style="--d:.5s"><span class="ui-lab" style="width:90px">Location</span><span class="ui-input f1" style="min-height:38px;padding:6px 12px"><span class="a-type" style="--n:9;--d:1.4s">Your city</span><span class="caret"></span></span></div>
+          </div>
+          <div class="scene" data-cap="Answer questions about money, lifestyle, work and education, plus some just for fun.">
+            <div style="display:flex;flex-wrap:wrap;gap:6px"><span class="chip on">Money</span><span class="chip">Lifestyle</span><span class="chip">Work &amp; education</span><span class="chip">Fun</span></div>
+            <div class="card a-up" style="--d:.2s;display:flex;flex-direction:column;gap:10px;padding:18px">
+              <span class="ui-lab">Question 3 of 12</span>
+              <span class="ui-h" style="font-size:20px">What's your yearly salary range?</span>
+              <span class="chip a-up" style="--d:.4s;justify-content:flex-start">Under $50k</span>
+              <span class="chip on a-sel a-up" style="--d:.55s;justify-content:flex-start;background:#1F0A17;border-color:#1F0A17">$50k – $100k</span>
+              <span class="chip a-up" style="--d:.7s;justify-content:flex-start">Over $100k</span>
+            </div>
+          </div>
+          <div class="scene" data-cap="Filter everyone else's answers down to people like you.">
+            <div style="display:flex;flex-wrap:wrap;gap:6px"><span class="chip on a-sel" style="--d:.3s">Age 30–34</span><span class="chip on a-sel" style="--d:.9s">Same city</span><span class="chip on a-sel" style="--d:1.5s">Same field</span></div>
+            <div style="display:grid;grid-template-columns:repeat(12,1fr);gap:10px;align-content:center;justify-items:center;padding:16px 0">
+              <i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.5s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.1s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.5s"></i><i style="width:14px;height:14px;border-radius:50%;background:#1F0A17"></i><i style="width:14px;height:14px;border-radius:50%;background:#1F0A17"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.6s"></i><i style="width:14px;height:14px;border-radius:50%;background:#1F0A17"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.7s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.7s"></i><i style="width:14px;height:14px;border-radius:50%;background:#1F0A17"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.6s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.1s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.6s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.7s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.5s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.6s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.1s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.5s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.7s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.5s"></i><i style="width:14px;height:14px;border-radius:50%;background:#1F0A17"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.1s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.5s"></i><i style="width:14px;height:14px;border-radius:50%;background:#1F0A17"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.7s"></i><i style="width:14px;height:14px;border-radius:50%;background:#1F0A17"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.2s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.7s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.7s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.6s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.2s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.7s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.6s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.1s"></i><i style="width:14px;height:14px;border-radius:50%;background:#1F0A17"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.3s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.6s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.6s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.5s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.1s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.8s"></i><i style="width:14px;height:14px;border-radius:50%;background:#1F0A17"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.7s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.3s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.8s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.8s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.3s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.2s"></i>
+            </div>
+            <span class="ui-lab a-fade" style="--d:1.9s">Showing people like you</span>
+          </div>
+          <div class="scene" data-cap="Then see exactly where you land.">
+            <span class="ui-h a-up">Salary · people like you</span>
+            <div style="position:relative;height:170px">
+              <svg viewBox="0 0 400 160" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%"><path class="a-fade" d="M0 158 C90 158 120 18 200 18 C280 18 310 158 400 158 Z" fill="#FF8AD0" opacity=".45"/><path class="a-draw" d="M0 158 C90 158 120 18 200 18 C280 18 310 158 400 158" fill="none" stroke="#1F0A17" stroke-width="3" vector-effect="non-scaling-stroke"/></svg>
+              <div class="a-left" style="position:absolute;bottom:0;left:62%;--from:5%;--d:.9s;display:flex;flex-direction:column;align-items:center;transform:translateX(-50%)">
+                <span class="mono" style="background:#1F0A17;color:#FF8AD0;font-size:12px;padding:4px 10px;border-radius:6px">YOU</span>
+                <span style="width:3px;height:120px;background:#1F0A17"></span>
+              </div>
+            </div>
+            <span class="a-up" style="--d:1.8s;font-weight:700">A little above the middle of your group.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cap" aria-live="polite"><span class="cap-n mono"></span><span class="cap-t"></span></div>
+    <div class="segs"></div>
+  </div>
+  <div class="pv-info">
+    <div class="tag mono"><span class="dot beta pulse"></span>In beta · Social</div>
+    <h2 id="pv-title">compareme</h2>
+    <p class="lede">Ever wonder how your life stacks up? compareme starts with a few details about you, like age, gender and location, then asks questions about money, lifestyle, work and education, plus some just for fun. Filter everyone else's answers down to people like you and see where you land.</p>
+    <h3 class="mono">What it does</h3>
+    <ol class="feats">
+      <li><span><b>A quick profile</b>Age, gender, location and a few other basics set up who you're compared against.</span></li>
+      <li><span><b>Four kinds of questions</b>Money, lifestyle, work and education, and fun or opinion questions.</span></li>
+      <li><span><b>Filter by people like you</b>Narrow the crowd by any combination of demographics.</span></li>
+      <li><span><b>See where you land</b>Your answer plotted against everyone in the group you picked.</span></li>
+    </ol>
+    <h3 class="mono">Status</h3>
+    <div class="stack"><span>Working prototype</span></div>
+    <div class="pv-cta">
+      <span class="soon">Beta link coming soon</span>
+      <a class="ghost" href="https://github.com/robbiestells">Follow along on GitHub</a>
+    </div>
+  </div>
+</div>
+</template>
+
+<!-- ---------- Spending Tracker ---------- -->
+<template id="pv-spending-tracker">
+<div class="pv-grid" style="--pc:#FFFFFF;--pi:#111111">
+  <div class="pv-demo">
+    <div class="pv-top mono"><span>Demo · sample data</span>
+      <button class="pv-play" type="button" aria-label="Pause demo"><svg class="i-pause" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="1" width="3.5" height="12" rx="1" fill="currentColor"/><rect x="8.5" y="1" width="3.5" height="12" rx="1" fill="currentColor"/></svg><svg class="i-play" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5l9 5.5-9 5.5z" fill="currentColor"/></svg></button>
+    </div>
+    <div class="stage center">
+      <div class="phone" aria-hidden="true">
+        <div class="scene" data-cap="Sign in first, so your numbers stay private.">
+          <div class="a-pop" style="width:52px;height:52px;border-radius:16px;background:#2F4BFF;display:grid;place-items:center"><svg width="22" height="26" viewBox="0 0 22 26"><rect x="1" y="11" width="20" height="14" rx="3" fill="#fff"/><path d="M5 11V7a6 6 0 0112 0v4" fill="none" stroke="#fff" stroke-width="2.5"/></svg></div>
+          <span class="ui-h a-up" style="--d:.15s">Welcome back</span>
+          <span class="muted a-up" style="--d:.2s">Your numbers are only visible to you.</span>
+          <div class="ui-input a-up" style="--d:.3s;font-size:13px"><span class="a-type" style="--n:13;--d:.6s">you@email.com</span></div>
+          <div class="ui-input a-up" style="--d:.4s;font-size:13px"><span class="a-type" style="--n:8;--d:1.5s">••••••••</span></div>
+          <span class="ui-btn a-pop" style="--d:2.3s;align-self:stretch">Sign in</span>
+        </div>
+        <div class="scene" data-cap="Upload a CSV of past data, or add income and spending right in the app.">
+          <span class="ui-h">Add data</span>
+          <div style="border:2px dashed #111;border-radius:14px;padding:16px;display:flex;flex-direction:column;align-items:center;gap:10px;background:#F7F5F0">
+            <span class="chip a-move" style="--fy:-50px;--d:.2s">▤ spending-2025.csv</span>
+            <span class="muted" style="font-size:12px">Drop a CSV here</span>
+          </div>
+          <span class="chip on a-pop" style="--d:1s;align-self:flex-start;background:#1F9D55;border-color:#1F9D55">✓ Imported</span>
+          <span class="ui-lab a-fade" style="--d:1.4s;margin-top:4px">Or add an entry</span>
+          <div class="ui-row a-up" style="--d:1.6s"><span class="f1">Groceries</span><span class="num">−$64.20</span></div>
+          <div class="ui-row a-up" style="--d:1.8s"><span class="f1">Paycheck</span><span class="num" style="color:#136B39">+$2,450</span></div>
+        </div>
+        <div class="scene" data-cap="See where the money goes, year over year.">
+          <div style="display:flex;gap:6px"><span class="chip" style="font-size:11px;padding:4px 10px">2024</span><span class="chip on a-sel" style="--d:.2s;font-size:11px;padding:4px 10px">2025</span><span class="chip" style="font-size:11px;padding:4px 10px">2026</span></div>
+          <svg width="150" height="150" viewBox="0 0 190 190" style="align-self:center;transform:rotate(-90deg)">
+            <circle cx="95" cy="95" r="62" fill="none" stroke="#EEEBE4" stroke-width="28"/>
+            <circle class="a-ring" cx="95" cy="95" r="62" fill="none" stroke="#2F4BFF" stroke-width="28" style="stroke-dasharray:150 400;--d:.3s"/>
+            <circle class="a-ring" cx="95" cy="95" r="62" fill="none" stroke="#FF5A36" stroke-width="28" style="stroke-dasharray:95 400;transform:rotate(155deg);transform-origin:95px 95px;--d:.5s"/>
+            <circle class="a-ring" cx="95" cy="95" r="62" fill="none" stroke="#C8F23C" stroke-width="28" style="stroke-dasharray:70 400;transform:rotate(250deg);transform-origin:95px 95px;--d:.7s"/>
+            <circle class="a-ring" cx="95" cy="95" r="62" fill="none" stroke="#FF8AD0" stroke-width="28" style="stroke-dasharray:50 400;transform:rotate(318deg);transform-origin:95px 95px;--d:.9s"/>
+          </svg>
+          <div class="ui-row" style="padding:5px 0"><i style="width:10px;height:10px;border-radius:3px;background:#2F4BFF"></i><span class="f1">Housing</span><span class="bar-t" style="max-width:90px;--c:#2F4BFF"><b class="a-x" style="width:90%;--d:1s"></b></span></div>
+          <div class="ui-row" style="padding:5px 0"><i style="width:10px;height:10px;border-radius:3px;background:#FF5A36"></i><span class="f1">Food</span><span class="bar-t" style="max-width:90px;--c:#FF5A36"><b class="a-x" style="width:58%;--d:1.15s"></b></span></div>
+          <div class="ui-row" style="padding:5px 0"><i style="width:10px;height:10px;border-radius:3px;background:#9CC21A"></i><span class="f1">Transport</span><span class="bar-t" style="max-width:90px;--c:#9CC21A"><b class="a-x" style="width:42%;--d:1.3s"></b></span></div>
+        </div>
+        <div class="scene" data-cap="Set your own goals and track progress toward them.">
+          <span class="ui-h">Goals</span>
+          <div class="card a-up" style="--d:.1s;display:flex;flex-direction:column;gap:10px">
+            <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-weight:700">Your big goal</span><span class="chip on a-pop" style="--d:1.3s;font-size:11px;padding:3px 8px;background:#1F9D55;border-color:#1F9D55">On track</span></div>
+            <span class="bar-t" style="flex:none;height:12px;border-radius:6px;--c:#2F4BFF"><b class="a-x" style="width:62%;border-radius:6px;--d:.4s"></b></span>
+          </div>
+          <div class="card a-up" style="--d:.3s;display:flex;flex-direction:column;gap:6px">
+            <span class="ui-lab">Net worth</span>
+            <svg viewBox="0 0 200 70" preserveAspectRatio="none" style="width:100%;height:80px"><polyline class="a-draw" style="--d:.7s" points="0,62 25,58 50,54 75,50 100,42 125,38 150,28 175,22 200,12" fill="none" stroke="#111" stroke-width="2.5" vector-effect="non-scaling-stroke"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cap" aria-live="polite"><span class="cap-n mono"></span><span class="cap-t"></span></div>
+    <div class="segs"></div>
+  </div>
+  <div class="pv-info">
+    <div class="tag mono"><span class="dot beta pulse"></span>In beta · Finance</div>
+    <h2 id="pv-title">Spending Tracker</h2>
+    <p class="lede">Years of income and spending in one place you'll actually want to look at. Spending Tracker is built phone-first and sits behind a login, so your numbers stay private. Bring in your history with a CSV upload, add new entries right in the app, and see where the money goes over time, with your own goals to measure against.</p>
+    <h3 class="mono">What it does</h3>
+    <ol class="feats">
+      <li><span><b>Private by default</b>Everything sits behind a login. Your numbers are never public.</span></li>
+      <li><span><b>CSV upload</b>Bring in past years of income and spending in one go.</span></li>
+      <li><span><b>Quick entry</b>Add new income and expenses directly in the app.</span></li>
+      <li><span><b>See where it goes</b>Spending broken down and compared over time, so opportunities to improve stand out.</span></li>
+      <li><span><b>Your goals</b>Set the targets that matter to you and track progress toward them.</span></li>
+    </ol>
+    <h3 class="mono">Built with</h3>
+    <div class="stack"><span>Supabase</span><span>GitHub Pages</span></div>
+    <div class="pv-cta">
+      <a class="go" href="https://robbiestells.github.io/budgetrunway/">Open the beta ↗</a>
+      <a class="ghost" href="https://github.com/robbiestells/budgetrunway">View the code</a>
+    </div>
+    <p class="beta-note">It's in beta, so expect a few rough edges while it's being built out.</p>
+  </div>
+</div>
+</template>
+
 <script>
 (() => {
   document.getElementById('yr').textContent = new Date().getFullYear();
@@ -302,6 +833,129 @@ h1{margin:0;font-size:clamp(48px,8.4vw,132px);line-height:.95;letter-spacing:-.0
     el.style.transitionDelay = (i % 3) * 90 + 'ms';
     io.observe(el);
   });
+
+  // ---------- Preview dialog ----------
+  const root = document.documentElement;
+  const dlg = document.getElementById('pv');
+  const panel = dlg.querySelector('.pv-panel');
+  const pbody = dlg.querySelector('.pv-body');
+  const scrim = dlg.querySelector('.pv-scrim');
+  const EASE = 'cubic-bezier(.2,.9,.2,1)';
+  let current = null, closing = false;
+
+  // transform that maps the panel onto a tile's box (for the expand/collapse)
+  const flipTo = (tile) => {
+    const a = tile.getBoundingClientRect(), b = panel.getBoundingClientRect();
+    return `translate(${a.left - b.left}px, ${a.top - b.top}px) scale(${a.width / b.width}, ${a.height / b.height})`;
+  };
+  const onScreen = (el) => { const r = el.getBoundingClientRect(); return r.bottom > 0 && r.top < innerHeight; };
+
+  function initDemo(d) {
+    const scenes = [...d.querySelectorAll('.scene')];
+    const segs = d.querySelector('.segs'), capN = d.querySelector('.cap-n'), capT = d.querySelector('.cap-t');
+    const btn = d.querySelector('.pv-play');
+    const pad = (n) => String(n).padStart(2, '0');
+    let i = 0;
+    const go = (k) => {
+      i = (k + scenes.length) % scenes.length;
+      scenes.forEach((s, j) => s.classList.toggle('on', j === i));
+      [...segs.children].forEach((b, j) => {
+        b.classList.toggle('done', j < i);
+        b.classList.toggle('on', j === i);
+        j === i ? b.setAttribute('aria-current', 'step') : b.removeAttribute('aria-current');
+        const f = b.querySelector('i'); f.style.animation = 'none'; void f.offsetWidth; f.style.animation = '';
+      });
+      capN.textContent = pad(i + 1) + ' / ' + pad(scenes.length);
+      capT.textContent = scenes[i].dataset.cap;
+    };
+    scenes.forEach((s, k) => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'seg';
+      b.setAttribute('aria-label', `Step ${k + 1} of ${scenes.length}: ${s.dataset.cap}`);
+      b.innerHTML = '<span><i></i></span>';
+      b.addEventListener('click', () => go(k));
+      segs.append(b);
+    });
+    // the progress bar's own animation drives the timing, so pausing it pauses everything
+    segs.addEventListener('animationend', (e) => { if (e.target === segs.children[i].querySelector('i')) go(i + 1); });
+    if (reduce) { d.classList.add('manual'); btn.hidden = true; }
+    btn.addEventListener('click', () => {
+      const p = d.classList.toggle('paused');
+      btn.setAttribute('aria-label', p ? 'Play demo' : 'Pause demo');
+    });
+    go(0);
+  }
+
+  function openPreview(id, tile) {
+    const tpl = document.getElementById('pv-' + id);
+    if (!tpl || dlg.open) return false;
+    pbody.replaceChildren(tpl.content.cloneNode(true));
+    current = { id, tile };
+    dlg.showModal();
+    root.classList.add('lock');
+    panel.scrollTop = 0;
+    initDemo(pbody.querySelector('.pv-demo'));
+    history.replaceState(null, '', '#preview/' + id);
+    if (reduce) return true;
+    scrim.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 350, easing: 'ease-out' });
+    if (tile && onScreen(tile)) {
+      const from = getComputedStyle(tile).backgroundColor, to = getComputedStyle(panel).backgroundColor;
+      panel.animate([
+        { transform: flipTo(tile), transformOrigin: '0 0', backgroundColor: from },
+        { transform: 'none', transformOrigin: '0 0', backgroundColor: to }
+      ], { duration: 650, easing: EASE });
+      pbody.animate([{ opacity: 0 }, { opacity: 0, offset: .4 }, { opacity: 1 }], { duration: 750, easing: 'ease-out' });
+    } else {
+      panel.animate([{ transform: 'translateY(24px) scale(.96)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 450, easing: EASE });
+    }
+    return true;
+  }
+
+  async function closePreview() {
+    if (!dlg.open || closing) return;
+    closing = true;
+    const tile = current && current.tile;
+    if (!reduce) {
+      const anims = [scrim.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 380, easing: 'ease-in', fill: 'forwards' })];
+      if (tile && onScreen(tile)) {
+        anims.push(pbody.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 160, fill: 'forwards' }));
+        anims.push(panel.animate([
+          { transform: 'none', transformOrigin: '0 0' },
+          { transform: flipTo(tile), transformOrigin: '0 0', backgroundColor: getComputedStyle(tile).backgroundColor }
+        ], { duration: 460, easing: 'cubic-bezier(.7,0,.3,1)', fill: 'forwards' }));
+      } else {
+        anims.push(panel.animate([{ opacity: 1 }, { opacity: 0, transform: 'scale(.96)' }], { duration: 260, fill: 'forwards' }));
+      }
+      await Promise.all(anims.map((a) => a.finished.catch(() => {})));
+      dlg.close();
+      anims.forEach((a) => a.cancel());
+    } else {
+      dlg.close();
+    }
+    pbody.replaceChildren();
+    root.classList.remove('lock');
+    history.replaceState(null, '', location.pathname + location.search);
+    if (tile) tile.focus({ preventScroll: true });
+    current = null; closing = false;
+  }
+
+  dlg.querySelector('.pv-close').addEventListener('click', closePreview);
+  scrim.addEventListener('click', closePreview);
+  dlg.addEventListener('click', (e) => { if (e.target === dlg) closePreview(); });
+  dlg.addEventListener('cancel', (e) => { e.preventDefault(); closePreview(); });
+
+  // In-beta tiles open the preview; cmd/ctrl/shift-click still opens the app itself.
+  document.querySelectorAll('.tile[data-preview]').forEach((t) => {
+    t.addEventListener('click', (e) => {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+      if (!t.querySelector('.dot.beta')) return;
+      if (openPreview(t.dataset.preview, t)) e.preventDefault();
+    });
+  });
+
+  // Shareable links: robbiestells.github.io/portfolio/#preview/blunder-lab
+  const m = location.hash.match(/^#preview\/([\w-]+)$/);
+  if (m) openPreview(m[1], document.querySelector(`.tile[data-preview="${m[1]}"]`));
 
   // 3D tilt + light that follows the cursor
   if (reduce || !matchMedia('(hover: hover)').matches) return;
