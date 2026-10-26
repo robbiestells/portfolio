@@ -373,6 +373,64 @@ dialog.pv::backdrop{background:transparent}
 .pv-grid.g-mk .go{border-radius:0;font:700 18px/1 'Barlow Condensed',sans-serif;letter-spacing:.06em;text-transform:uppercase;box-shadow:4px 4px 0 #C8102E}
 .pv-grid.g-rw .go{border-radius:14px;background:#0b6b5c}
 
+/* compareme: light app, night-time arena, you in gold */
+.th-cm{--pc:#F2F4F7;--pi:#141B26;font-family:'Atkinson Hyperlegible',system-ui,sans-serif}
+.th-cm .pv-top,.th-cm .cap-n{font-family:'IBM Plex Mono',ui-monospace,monospace}
+.th-cm .cap{font-family:'Bricolage Grotesque',sans-serif;font-weight:700}
+.cm-mark{font:800 34px/1 'Bricolage Grotesque',sans-serif;letter-spacing:-.03em;color:#141B26}
+.cm-mark span,.g-cm .pv-info h2 span{color:#E39B12}
+.cm-strip{display:flex;gap:10px;height:22px;align-items:flex-end;fill:#B7C0CE}
+.cm-strip svg{width:13px;height:21px}
+.cm-strip .you{fill:#E39B12}
+.cm-h{font:700 20px/1.1 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;color:#141B26}
+.cm-h small{font:400 12px 'Atkinson Hyperlegible',sans-serif;color:#5B6676;margin-left:4px}
+.cm-lab{font-weight:700;font-size:13px;margin-bottom:6px;color:#141B26}
+.cm-chips{display:flex;flex-wrap:wrap;gap:6px}
+.cm-chip{display:inline-block;padding:6px 11px;border:1px solid #DDE2EA;border-radius:999px;background:#fff;font-size:13px;white-space:nowrap;color:#141B26}
+.cm-chip.on{background:#2340C8;border-color:#2340C8;color:#fff}
+.cm-in{display:inline-flex;align-items:center;width:110px;height:36px;padding:0 12px;border:1px solid #DDE2EA;border-radius:10px;background:#fff;font:500 14px 'IBM Plex Mono',monospace}
+.cm-num{font:500 11px/1.3 'IBM Plex Mono',ui-monospace,monospace;color:#5B6676}
+.cm-arena{position:relative;flex:1;min-height:300px;background:#0D131E;border-radius:18px;overflow:hidden;color:#EEF2F8}
+.cm-arena .t{position:absolute;left:16px;top:14px;z-index:3;pointer-events:none}
+.cm-arena h4{font:700 21px/1 'Bricolage Grotesque',sans-serif;margin:0;letter-spacing:-.02em}
+.cm-arena p{margin:6px 0 0;font-size:12px;line-height:1.35;color:#8C99AD;max-width:230px}
+.cm-fig{position:absolute;width:9px;height:14px;margin:-14px 0 0 -4.5px;fill:#3C485D}
+.cm-fig.hi{fill:#93A8CF}.cm-fig.you{fill:#F2B33D;z-index:2}
+.cm-tag{position:absolute;z-index:3;font:700 10px/1 'Atkinson Hyperlegible',sans-serif;background:#F2B33D;color:#0D131E;padding:3px 6px;border-radius:5px;transform:translate(-50%,-100%)}
+.cm-ring{position:absolute;z-index:2;width:24px;height:24px;margin:-12px 0 0 -12px;border:2px solid #F2B33D;border-radius:50%;animation:cmpulse 1.6s ease-out infinite}
+@keyframes cmpulse{from{transform:scale(.6);opacity:1}to{transform:scale(1.7);opacity:0}}
+.cm-axis{position:absolute;left:5%;right:5%;bottom:6%;display:flex;justify-content:space-between;border-top:1px solid #2A3548;padding-top:4px;font:500 10px 'IBM Plex Mono',monospace;color:#8C99AD}
+.cm-crowd{position:absolute;inset:0;transform-origin:50% 72%}
+.cm-spot{position:absolute;inset:0;z-index:1;background:radial-gradient(circle at 50% 64%,transparent 0 20%,rgba(13,19,30,.8) 40%);pointer-events:none}
+.cm-slider{position:absolute;left:10px;right:10px;bottom:10px;z-index:3;display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:12px;background:rgba(20,28,42,.85);border:1px solid #2A3548;font:500 9px 'IBM Plex Mono',monospace;color:#8C99AD;letter-spacing:.08em}
+.cm-slider i{flex:1;height:4px;border-radius:2px;background:#2A3548;position:relative}
+.cm-slider b{position:absolute;top:-5px;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:#F2B33D}
+.cm-card{background:#fff;border:1px solid #DDE2EA;border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;gap:8px;color:#141B26;font-size:14px}
+.cm-av{width:14px;height:22px;fill:#2340C8}
+.cm-pct{font:500 12px 'IBM Plex Mono',monospace;color:#2340C8}
+.cm-bar{height:6px;border-radius:3px;background:#E8ECF3;position:relative}
+.cm-bar b{position:absolute;left:0;top:0;bottom:0;border-radius:3px;background:#2340C8}
+.cm-tags{display:flex;flex-wrap:wrap;gap:5px}
+.cm-tags span{font-size:12px;padding:3px 8px;border-radius:999px;background:#E8ECF3}
+.cm-tags span.d{background:#FFF3D9;color:#7A4F00}
+.cm-share{align-self:center;width:250px;aspect-ratio:4/5;background:#0D131E;color:#EEF2F8;border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:10px;box-shadow:0 24px 48px -20px rgba(13,19,30,.6)}
+.cm-stat{font:700 21px/1.1 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em}
+.cm-stat em{font-style:normal;color:#F2B33D}
+.cm-grid{display:grid;grid-template-columns:repeat(10,1fr);gap:4px 6px;flex:1;align-content:center}
+.cm-g{width:100%;height:17px;fill:#3C485D}
+.cm-g.lo{fill:#93A8CF}.cm-g.you{fill:#F2B33D}
+.scene.on .a-sort{animation:aSort 1.5s cubic-bezier(.7,0,.2,1) var(--d,0s) both}
+@keyframes aSort{from{left:var(--sx);top:var(--sy)}}
+.scene.on .a-zoom{animation:aZoom 2.2s cubic-bezier(.7,0,.2,1) .3s both}
+@keyframes aZoom{from{transform:none}to{transform:scale(2.5)}}
+.scene.on .a-hi{animation:aHi .6s ease var(--d,0s) both}
+@keyframes aHi{from{fill:#3C485D}}
+.cm-tile .cm-fig{animation:cmbob 3s ease-in-out infinite alternate}
+@keyframes cmbob{to{transform:translateY(-3px)}}
+.g-cm{--fa:#2340C8;--fi:#fff}
+.pv-grid.g-cm .pv-info h2{font:800 clamp(52px,5.4vw,74px)/1 'Bricolage Grotesque',sans-serif;letter-spacing:-.04em}
+.pv-grid.g-cm .go{background:#2340C8;border-radius:12px}
+
 /* info column */
 .pv-info{padding:40px 40px 32px;overflow:auto;overscroll-behavior:contain;display:flex;flex-direction:column}
 .pv-info .tag{padding-right:56px}
@@ -418,6 +476,7 @@ dialog.pv::backdrop{background:transparent}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="cmf" viewBox="-4 -14 8 14"><path d="M-3.6 0V-4.6Q-3.6-8.6 0-8.6Q3.6-8.6 3.6-4.6V0Z"/><circle cy="-11.4" r="2.5"/></symbol></svg>
 
 <header class="wrap">
   <a href="#" class="logo" aria-label="robbiestells home">
@@ -523,12 +582,55 @@ dialog.pv::backdrop{background:transparent}
         <p style="margin-top:10px">How do you stack up against people like you?</p>
       </div>
     </div>
-    <div aria-hidden="true" style="flex:1 1 220px;position:relative;display:flex;align-items:flex-end;justify-content:center">
-      <svg width="260" height="150" viewBox="0 0 260 150"><path d="M0 145 C60 145 80 20 130 20 C180 20 200 145 260 145 Z" fill="#1F0A17" opacity=".15"/><path d="M0 145 C60 145 80 20 130 20 C180 20 200 145 260 145" fill="none" stroke="#1F0A17" stroke-width="3"/></svg>
-      <div class="slide" style="position:absolute;bottom:0;left:50%;display:flex;flex-direction:column;align-items:center">
-        <span class="mono" style="background:#1F0A17;color:#FF8AD0;font-size:12px;padding:4px 10px;border-radius:6px">YOU</span>
-        <span style="width:3px;height:110px;background:#1F0A17"></span>
-      </div>
+    <div aria-hidden="true" class="cm-tile" style="flex:1 1 220px;position:relative;min-height:170px;background:#0D131E;border-radius:18px;overflow:hidden">
+<svg class="cm-fig " style="left:54.2%;top:56.0%;animation-delay:-2.39s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:44.7%;top:60.1%;animation-delay:-2.95s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:50.8%;top:48.1%;animation-delay:-0.35s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:56.7%;top:63.4%;animation-delay:-0.33s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:37.7%;top:54.1%;animation-delay:-1.61s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:61.7%;top:49.7%;animation-delay:-1.92s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:42.6%;top:43.8%;animation-delay:-1.11s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:66.2%;top:61.0%;animation-delay:-0.23s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:33.2%;top:61.9%;animation-delay:-0.59s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:58.1%;top:41.3%;animation-delay:-2.47s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:56.0%;top:72.2%;animation-delay:-0.77s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:32.0%;top:47.1%;animation-delay:-2.14s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:71.2%;top:52.0%;animation-delay:-2.27s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:37.1%;top:71.6%;animation-delay:-1.60s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:47.0%;top:36.4%;animation-delay:-0.11s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:68.3%;top:69.1%;animation-delay:-0.68s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:25.3%;top:56.9%;animation-delay:-2.34s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:68.0%;top:40.8%;animation-delay:-1.62s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:48.8%;top:78.1%;animation-delay:-2.84s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:32.9%;top:38.6%;animation-delay:-1.50s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:77.1%;top:59.1%;animation-delay:-2.99s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:27.0%;top:69.6%;animation-delay:-0.48s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:56.3%;top:32.3%;animation-delay:-2.55s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:64.5%;top:77.5%;animation-delay:-2.10s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:21.6%;top:48.3%;animation-delay:-0.67s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:77.6%;top:45.2%;animation-delay:-1.23s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:38.1%;top:80.3%;animation-delay:-2.68s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:39.3%;top:30.8%;animation-delay:-1.16s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:78.4%;top:68.7%;animation-delay:-1.35s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:18.5%;top:63.1%;animation-delay:-0.59s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:67.9%;top:32.3%;animation-delay:-2.66s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:55.7%;top:84.2%;animation-delay:-0.02s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:23.0%;top:38.2%;animation-delay:-1.65s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:84.5%;top:53.6%;animation-delay:-1.96s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:26.1%;top:77.9%;animation-delay:-1.51s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:50.2%;top:25.7%;animation-delay:-2.46s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:74.3%;top:78.7%;animation-delay:-1.03s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:13.6%;top:53.1%;animation-delay:-0.98s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:79.5%;top:37.0%;animation-delay:-2.95s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:43.3%;top:87.4%;animation-delay:-0.30s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:29.8%;top:28.7%;animation-delay:-2.60s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:87.1%;top:64.6%;animation-delay:-2.39s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:15.4%;top:71.1%;animation-delay:-2.77s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:63.7%;top:24.6%;animation-delay:-0.37s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:65.0%;top:87.3%;animation-delay:-0.73s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig you" style="left:50.0%;top:68.0%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<span class="cm-ring" style="left:50%;top:68%;margin-top:-19px"></span>
+<span class="cm-tag" style="left:50%;top:calc(68% - 18px)">You</span>
     </div>
     <span class="peek mono">Preview <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C8F23C"/><path d="M12 7v10M7 12h10" stroke="#111" stroke-width="2"/></svg></span>
     <span class="shine"></span>
@@ -896,67 +998,377 @@ dialog.pv::backdrop{background:transparent}
 </div>
 </template>
 
-<!-- ---------- compareme ---------- -->
+<!-- ---------- compareme (styled like the app: a night-time arena, you in gold) ---------- -->
 <template id="pv-compareme">
-<div class="pv-grid" style="--pc:#FF8AD0;--pi:#1F0A17">
-  <div class="pv-demo">
-    <div class="pv-top mono"><span>Demo · sample data</span>
+<div class="pv-grid g-cm" style="--pc:#F2F4F7;--pi:#141B26">
+  <div class="pv-demo th-cm">
+    <div class="pv-top"><span>compareme · demo · sample crowd</span>
       <button class="pv-play" type="button" aria-label="Pause demo"><svg class="i-pause" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="1" width="3.5" height="12" rx="1" fill="currentColor"/><rect x="8.5" y="1" width="3.5" height="12" rx="1" fill="currentColor"/></svg><svg class="i-play" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5l9 5.5-9 5.5z" fill="currentColor"/></svg></button>
     </div>
     <div class="stage">
-      <div class="win" aria-hidden="true">
-        <div class="win-bar"><i></i><i></i><i></i><span class="win-url mono">robbiestells.github.io/compareme</span></div>
-        <div class="win-body">
-          <div class="scene" data-cap="Start with a few details about you, like age, gender and location.">
-            <span class="ui-h a-up">First, a bit about you</span>
-            <div class="ui-row a-up" style="--d:.2s"><span class="ui-lab" style="width:90px">Age</span><span class="chip">25–29</span><span class="chip on a-sel" style="--d:.7s">30–34</span><span class="chip">35–39</span></div>
-            <div class="ui-row a-up" style="--d:.35s"><span class="ui-lab" style="width:90px">Gender</span><span class="chip">Woman</span><span class="chip">Man</span><span class="chip on a-sel" style="--d:1.1s">Prefer not to say</span></div>
-            <div class="ui-row a-up" style="--d:.5s"><span class="ui-lab" style="width:90px">Location</span><span class="ui-input f1" style="min-height:38px;padding:6px 12px"><span class="a-type" style="--n:9;--d:1.4s">Your city</span><span class="caret"></span></span></div>
-          </div>
-          <div class="scene" data-cap="Answer questions about money, lifestyle, work and education, plus some just for fun.">
-            <div style="display:flex;flex-wrap:wrap;gap:6px"><span class="chip on">Money</span><span class="chip">Lifestyle</span><span class="chip">Work &amp; education</span><span class="chip">Fun</span></div>
-            <div class="card a-up" style="--d:.2s;display:flex;flex-direction:column;gap:10px;padding:18px">
-              <span class="ui-lab">Question 3 of 12</span>
-              <span class="ui-h" style="font-size:20px">What's your yearly salary range?</span>
-              <span class="chip a-up" style="--d:.4s;justify-content:flex-start">Under $50k</span>
-              <span class="chip on a-sel a-up" style="--d:.55s;justify-content:flex-start;background:#1F0A17;border-color:#1F0A17">$50k – $100k</span>
-              <span class="chip a-up" style="--d:.7s;justify-content:flex-start">Over $100k</span>
-            </div>
-          </div>
-          <div class="scene" data-cap="Filter everyone else's answers down to people like you.">
-            <div style="display:flex;flex-wrap:wrap;gap:6px"><span class="chip on a-sel" style="--d:.3s">Age 30–34</span><span class="chip on a-sel" style="--d:.9s">Same city</span><span class="chip on a-sel" style="--d:1.5s">Same field</span></div>
-            <div style="display:grid;grid-template-columns:repeat(12,1fr);gap:10px;align-content:center;justify-items:center;padding:16px 0">
-              <i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.5s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.1s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.5s"></i><i style="width:14px;height:14px;border-radius:50%;background:#1F0A17"></i><i style="width:14px;height:14px;border-radius:50%;background:#1F0A17"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.6s"></i><i style="width:14px;height:14px;border-radius:50%;background:#1F0A17"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.7s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.7s"></i><i style="width:14px;height:14px;border-radius:50%;background:#1F0A17"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.6s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.1s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.6s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.7s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.5s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.6s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.1s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.5s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.7s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.5s"></i><i style="width:14px;height:14px;border-radius:50%;background:#1F0A17"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.1s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.5s"></i><i style="width:14px;height:14px;border-radius:50%;background:#1F0A17"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.7s"></i><i style="width:14px;height:14px;border-radius:50%;background:#1F0A17"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.2s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.7s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.7s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.6s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.2s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.7s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.6s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.1s"></i><i style="width:14px;height:14px;border-radius:50%;background:#1F0A17"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.3s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.6s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.6s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:0.5s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.1s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.8s"></i><i style="width:14px;height:14px;border-radius:50%;background:#1F0A17"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.7s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.3s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.8s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.8s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.3s"></i><i class="a-dim" style="width:14px;height:14px;border-radius:50%;background:#1F0A17;--d:1.2s"></i>
-            </div>
-            <span class="ui-lab a-fade" style="--d:1.9s">Showing people like you</span>
-          </div>
-          <div class="scene" data-cap="Then see exactly where you land.">
-            <span class="ui-h a-up">Salary · people like you</span>
-            <div style="position:relative;height:170px">
-              <svg viewBox="0 0 400 160" preserveAspectRatio="none" style="position:absolute;inset:0;width:100%;height:100%"><path class="a-fade" d="M0 158 C90 158 120 18 200 18 C280 18 310 158 400 158 Z" fill="#FF8AD0" opacity=".45"/><path class="a-draw" d="M0 158 C90 158 120 18 200 18 C280 18 310 158 400 158" fill="none" stroke="#1F0A17" stroke-width="3" vector-effect="non-scaling-stroke"/></svg>
-              <div class="a-left" style="position:absolute;bottom:0;left:62%;--from:5%;--d:.9s;display:flex;flex-direction:column;align-items:center;transform:translateX(-50%)">
-                <span class="mono" style="background:#1F0A17;color:#FF8AD0;font-size:12px;padding:4px 10px;border-radius:6px">YOU</span>
-                <span style="width:3px;height:120px;background:#1F0A17"></span>
-              </div>
-            </div>
-            <span class="a-up" style="--d:1.8s;font-weight:700">A little above the middle of your group.</span>
+      <div class="app" aria-hidden="true">
+
+        <div class="scene" data-cap="Answer a few questions about your life: money, work, lifestyle, and some just for fun.">
+          <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:10px"><div class="cm-mark a-up">compare<span>me</span></div><span class="cm-num">Sample crowd</span></div>
+          <div class="cm-strip a-fade" style="--d:.1s"><svg viewBox="0 0 8 14"><use href="#cmf"/></svg><svg viewBox="0 0 8 14"><use href="#cmf"/></svg><svg viewBox="0 0 8 14"><use href="#cmf"/></svg><svg viewBox="0 0 8 14"><use href="#cmf"/></svg><svg viewBox="0 0 8 14"><use href="#cmf"/></svg><svg viewBox="0 0 8 14"><use href="#cmf"/></svg><svg viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="you a-pop" style="--d:2.2s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg viewBox="0 0 8 14"><use href="#cmf"/></svg><svg viewBox="0 0 8 14"><use href="#cmf"/></svg><svg viewBox="0 0 8 14"><use href="#cmf"/></svg><svg viewBox="0 0 8 14"><use href="#cmf"/></svg><svg viewBox="0 0 8 14"><use href="#cmf"/></svg><svg viewBox="0 0 8 14"><use href="#cmf"/></svg></div>
+          <div class="cm-h a-up" style="--d:.15s">About you <small>used for filtering</small></div>
+          <div class="a-up" style="--d:.25s"><div class="cm-lab">Age</div><div class="cm-chips"><span class="cm-chip">18–24</span><span class="cm-chip on a-sel" style="--d:.7s">25–34</span><span class="cm-chip">35–44</span><span class="cm-chip">45–54</span><span class="cm-chip">55–64</span></div></div>
+          <div class="a-up" style="--d:.35s"><div class="cm-lab">Where you live</div><div class="cm-chips"><span class="cm-chip on a-sel" style="--d:1.1s">US Northeast</span><span class="cm-chip">US Midwest</span><span class="cm-chip">US South</span><span class="cm-chip">Canada</span></div></div>
+          <div class="a-up" style="--d:.45s"><div class="cm-lab">Hours worked per week</div><div style="display:flex;align-items:center;gap:8px"><span class="cm-in"><span class="a-type" style="--n:2;--d:1.4s">42</span></span><span class="cm-num">hours</span></div></div>
+          <div class="a-up" style="--d:.55s"><div class="cm-lab">Pineapple on pizza?</div><div class="cm-chips"><span class="cm-chip on a-sel" style="--d:1.9s">Love it</span><span class="cm-chip">No way</span><span class="cm-chip">Never tried</span></div></div>
+        </div>
+
+        <div class="scene" data-cap="Step into the crowd. Pick a question and watch everyone sort themselves into a line-up around you.">
+          <div class="cm-chips" style="flex-wrap:nowrap;overflow:hidden"><span class="cm-chip">Everyone</span><span class="cm-chip">Most like me</span><span class="cm-chip on a-sel" style="--d:.2s">Salary</span><span class="cm-chip">Savings rate</span><span class="cm-chip">Housing cost</span></div>
+          <div class="cm-arena">
+            <div class="t"><h4>Annual salary</h4><p>Everyone lined up from lowest to highest. You're the gold one.</p></div>
+            <svg class="cm-fig a-sort" style="left:6.0%;top:84.0%;--sx:20.7%;--sy:44.7%;--d:0.33s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:9.8%;top:84.0%;--sx:21.3%;--sy:57.7%;--d:0.30s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:13.7%;top:84.0%;--sx:22.4%;--sy:49.9%;--d:0.51s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:17.5%;top:84.0%;--sx:23.9%;--sy:37.6%;--d:0.58s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:17.5%;top:79.4%;--sx:24.3%;--sy:61.7%;--d:0.30s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:17.5%;top:74.8%;--sx:24.8%;--sy:54.3%;--d:0.53s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:21.3%;top:84.0%;--sx:24.8%;--sy:42.9%;--d:0.51s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:21.3%;top:79.4%;--sx:25.3%;--sy:69.3%;--d:0.58s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:21.3%;top:74.8%;--sx:26.6%;--sy:47.7%;--d:0.43s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:21.3%;top:70.2%;--sx:27.8%;--sy:76.7%;--d:0.48s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:25.1%;top:84.0%;--sx:27.8%;--sy:57.9%;--d:0.29s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:25.1%;top:79.4%;--sx:27.8%;--sy:64.6%;--d:0.27s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:25.1%;top:74.8%;--sx:28.1%;--sy:31.8%;--d:0.31s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:25.1%;top:70.2%;--sx:28.3%;--sy:37.2%;--d:0.51s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:25.1%;top:65.6%;--sx:28.8%;--sy:26.4%;--d:0.38s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:25.1%;top:61.0%;--sx:29.1%;--sy:51.7%;--d:0.62s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:29.0%;top:84.0%;--sx:29.2%;--sy:71.6%;--d:0.46s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:29.0%;top:79.4%;--sx:29.4%;--sy:42.2%;--d:0.48s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:29.0%;top:74.8%;--sx:31.5%;--sy:60.3%;--d:0.72s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:29.0%;top:70.2%;--sx:31.6%;--sy:46.6%;--d:0.51s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:29.0%;top:65.6%;--sx:31.7%;--sy:66.4%;--d:0.53s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:29.0%;top:61.0%;--sx:32.1%;--sy:78.1%;--d:0.73s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:29.0%;top:56.4%;--sx:32.5%;--sy:33.0%;--d:0.75s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:29.0%;top:51.8%;--sx:32.6%;--sy:54.8%;--d:0.33s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:32.8%;top:84.0%;--sx:33.0%;--sy:27.7%;--d:0.52s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:32.8%;top:79.4%;--sx:33.1%;--sy:38.1%;--d:0.61s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:32.8%;top:74.8%;--sx:33.3%;--sy:72.6%;--d:0.59s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:32.8%;top:70.2%;--sx:34.4%;--sy:22.6%;--d:0.32s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:32.8%;top:65.6%;--sx:34.9%;--sy:50.2%;--d:0.39s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:32.8%;top:61.0%;--sx:34.9%;--sy:42.9%;--d:0.74s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:32.8%;top:56.4%;--sx:35.6%;--sy:61.3%;--d:0.66s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:32.8%;top:51.8%;--sx:35.8%;--sy:66.9%;--d:0.32s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:32.8%;top:47.2%;--sx:36.3%;--sy:84.0%;--d:0.49s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:32.8%;top:42.6%;--sx:36.3%;--sy:78.4%;--d:0.41s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:32.8%;top:38.0%;--sx:36.9%;--sy:56.4%;--d:0.30s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:36.6%;top:84.0%;--sx:37.2%;--sy:30.4%;--d:0.44s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:36.6%;top:79.4%;--sx:37.3%;--sy:35.7%;--d:0.56s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:36.6%;top:74.8%;--sx:37.4%;--sy:72.4%;--d:0.78s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:36.6%;top:70.2%;--sx:38.2%;--sy:47.2%;--d:0.34s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:36.6%;top:65.6%;--sx:38.2%;--sy:25.4%;--d:0.37s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:36.6%;top:61.0%;--sx:38.8%;--sy:41.0%;--d:0.52s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:36.6%;top:56.4%;--sx:39.8%;--sy:52.5%;--d:0.46s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:36.6%;top:51.8%;--sx:40.1%;--sy:65.6%;--d:0.66s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:36.6%;top:47.2%;--sx:40.2%;--sy:20.7%;--d:0.56s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:36.6%;top:42.6%;--sx:40.4%;--sy:77.4%;--d:0.77s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:36.6%;top:38.0%;--sx:40.5%;--sy:60.4%;--d:0.59s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:36.6%;top:33.4%;--sx:40.6%;--sy:83.3%;--d:0.76s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:36.6%;top:28.8%;--sx:41.4%;--sy:70.6%;--d:0.53s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:40.4%;top:84.0%;--sx:41.6%;--sy:35.1%;--d:0.49s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:40.4%;top:79.4%;--sx:42.0%;--sy:29.7%;--d:0.47s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:40.4%;top:74.8%;--sx:42.5%;--sy:46.5%;--d:0.33s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:40.4%;top:70.2%;--sx:42.9%;--sy:41.2%;--d:0.61s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:40.4%;top:65.6%;--sx:43.0%;--sy:55.6%;--d:0.35s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:40.4%;top:61.0%;--sx:43.1%;--sy:16.6%;--d:0.35s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:40.4%;top:56.4%;--sx:43.5%;--sy:24.9%;--d:0.47s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:40.4%;top:51.8%;--sx:44.1%;--sy:75.1%;--d:0.38s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:40.4%;top:47.2%;--sx:44.5%;--sy:81.5%;--d:0.35s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:40.4%;top:42.6%;--sx:44.6%;--sy:61.7%;--d:0.54s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:40.4%;top:38.0%;--sx:44.9%;--sy:50.9%;--d:0.50s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:40.4%;top:33.4%;--sx:45.0%;--sy:67.0%;--d:0.33s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:40.4%;top:28.8%;--sx:45.6%;--sy:36.4%;--d:0.78s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:40.4%;top:24.2%;--sx:45.9%;--sy:86.9%;--d:0.68s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:44.3%;top:84.0%;--sx:46.0%;--sy:20.7%;--d:0.39s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:44.3%;top:79.4%;--sx:46.4%;--sy:30.7%;--d:0.81s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:44.3%;top:74.8%;--sx:46.9%;--sy:44.5%;--d:0.50s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:44.3%;top:70.2%;--sx:47.2%;--sy:71.4%;--d:0.37s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:44.3%;top:65.6%;--sx:47.8%;--sy:54.6%;--d:0.56s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:44.3%;top:61.0%;--sx:47.9%;--sy:78.7%;--d:0.37s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:44.3%;top:56.4%;--sx:48.4%;--sy:59.6%;--d:0.76s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:44.3%;top:51.8%;--sx:48.4%;--sy:26.0%;--d:0.80s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:44.3%;top:47.2%;--sx:48.8%;--sy:39.9%;--d:0.34s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:44.3%;top:42.6%;--sx:49.3%;--sy:17.3%;--d:0.58s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:44.3%;top:38.0%;--sx:49.5%;--sy:65.7%;--d:0.33s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:44.3%;top:33.4%;--sx:49.6%;--sy:84.3%;--d:0.66s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:44.3%;top:28.8%;--sx:50.1%;--sy:33.3%;--d:0.52s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:44.3%;top:24.2%;--sx:50.3%;--sy:47.1%;--d:0.33s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:44.3%;top:19.6%;--sx:51.3%;--sy:22.4%;--d:0.36s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:48.1%;top:84.0%;--sx:51.7%;--sy:52.0%;--d:0.39s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:48.1%;top:79.4%;--sx:52.0%;--sy:89.0%;--d:0.40s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:48.1%;top:74.8%;--sx:52.4%;--sy:69.4%;--d:0.47s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:48.1%;top:70.2%;--sx:52.5%;--sy:62.0%;--d:0.55s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:48.1%;top:65.6%;--sx:52.6%;--sy:28.7%;--d:0.51s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:48.1%;top:61.0%;--sx:52.6%;--sy:37.3%;--d:0.81s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:48.1%;top:56.4%;--sx:52.7%;--sy:80.8%;--d:0.69s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:48.1%;top:51.8%;--sx:52.8%;--sy:56.6%;--d:0.57s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:48.1%;top:47.2%;--sx:53.2%;--sy:14.7%;--d:0.57s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:48.1%;top:42.6%;--sx:53.4%;--sy:42.9%;--d:0.61s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:48.1%;top:38.0%;--sx:54.8%;--sy:48.1%;--d:0.60s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:48.1%;top:33.4%;--sx:54.9%;--sy:19.7%;--d:0.60s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:48.1%;top:28.8%;--sx:55.0%;--sy:76.5%;--d:0.50s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:48.1%;top:24.2%;--sx:55.4%;--sy:85.5%;--d:0.39s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:48.1%;top:19.6%;--sx:55.7%;--sy:32.6%;--d:0.35s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:51.9%;top:84.0%;--sx:55.8%;--sy:25.5%;--d:0.84s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:51.9%;top:79.4%;--sx:56.0%;--sy:65.3%;--d:0.41s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:51.9%;top:74.8%;--sx:56.2%;--sy:71.4%;--d:0.75s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:51.9%;top:70.2%;--sx:56.7%;--sy:55.1%;--d:0.69s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:51.9%;top:65.6%;--sx:57.4%;--sy:37.4%;--d:0.60s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:51.9%;top:61.0%;--sx:57.5%;--sy:42.6%;--d:0.81s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:51.9%;top:56.4%;--sx:57.6%;--sy:60.1%;--d:0.54s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:51.9%;top:51.8%;--sx:58.1%;--sy:81.4%;--d:0.43s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:51.9%;top:47.2%;--sx:58.8%;--sy:49.6%;--d:0.66s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:51.9%;top:42.6%;--sx:59.0%;--sy:18.0%;--d:0.62s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:51.9%;top:38.0%;--sx:59.3%;--sy:29.8%;--d:0.73s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:51.9%;top:33.4%;--sx:59.7%;--sy:23.6%;--d:0.53s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:51.9%;top:28.8%;--sx:59.9%;--sy:76.7%;--d:0.82s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:55.7%;top:84.0%;--sx:60.1%;--sy:66.1%;--d:0.62s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:55.7%;top:79.4%;--sx:60.6%;--sy:71.5%;--d:0.49s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:55.7%;top:74.8%;--sx:61.3%;--sy:53.9%;--d:0.58s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:55.7%;top:70.2%;--sx:61.4%;--sy:45.3%;--d:0.50s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:55.7%;top:65.6%;--sx:61.5%;--sy:34.9%;--d:0.69s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:55.7%;top:61.0%;--sx:61.5%;--sy:84.9%;--d:0.77s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:55.7%;top:56.4%;--sx:61.8%;--sy:59.8%;--d:0.75s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:55.7%;top:51.8%;--sx:62.3%;--sy:40.2%;--d:0.47s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:55.7%;top:47.2%;--sx:63.3%;--sy:28.6%;--d:0.48s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:55.7%;top:42.6%;--sx:63.7%;--sy:80.1%;--d:0.48s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:55.7%;top:38.0%;--sx:63.8%;--sy:22.8%;--d:0.83s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:59.6%;top:84.0%;--sx:64.2%;--sy:64.8%;--d:0.49s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:59.6%;top:79.4%;--sx:64.3%;--sy:50.5%;--d:0.46s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:59.6%;top:74.8%;--sx:64.9%;--sy:75.1%;--d:0.56s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:59.6%;top:70.2%;--sx:65.1%;--sy:69.9%;--d:0.84s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:59.6%;top:65.6%;--sx:65.4%;--sy:57.3%;--d:0.41s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:59.6%;top:61.0%;--sx:65.6%;--sy:34.2%;--d:0.42s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:59.6%;top:56.4%;--sx:66.1%;--sy:45.7%;--d:0.88s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:59.6%;top:51.8%;--sx:66.6%;--sy:40.1%;--d:0.80s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:63.4%;top:84.0%;--sx:67.4%;--sy:28.6%;--d:0.46s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:63.4%;top:79.4%;--sx:67.6%;--sy:82.3%;--d:0.64s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:63.4%;top:74.8%;--sx:68.0%;--sy:61.7%;--d:0.87s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:63.4%;top:70.2%;--sx:68.2%;--sy:23.2%;--d:0.82s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:63.4%;top:65.6%;--sx:68.2%;--sy:53.2%;--d:0.59s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:63.4%;top:61.0%;--sx:69.1%;--sy:77.1%;--d:0.66s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:67.2%;top:84.0%;--sx:69.4%;--sy:66.5%;--d:0.75s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:67.2%;top:79.4%;--sx:69.7%;--sy:35.0%;--d:0.78s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:67.2%;top:74.8%;--sx:69.7%;--sy:71.8%;--d:0.84s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:67.2%;top:70.2%;--sx:70.0%;--sy:47.8%;--d:0.73s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:71.0%;top:84.0%;--sx:70.5%;--sy:41.6%;--d:0.59s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:71.0%;top:79.4%;--sx:71.1%;--sy:57.0%;--d:0.85s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:71.0%;top:74.8%;--sx:71.6%;--sy:29.9%;--d:0.57s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:74.9%;top:84.0%;--sx:73.0%;--sy:61.6%;--d:0.75s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:74.9%;top:79.4%;--sx:73.2%;--sy:51.1%;--d:0.79s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:78.7%;top:84.0%;--sx:73.5%;--sy:37.1%;--d:0.61s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:78.7%;top:79.4%;--sx:74.0%;--sy:66.8%;--d:0.64s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:78.7%;top:74.8%;--sx:74.0%;--sy:44.3%;--d:0.79s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:82.5%;top:84.0%;--sx:74.1%;--sy:72.3%;--d:0.76s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:82.5%;top:79.4%;--sx:75.6%;--sy:32.3%;--d:0.80s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:82.5%;top:74.8%;--sx:75.6%;--sy:55.3%;--d:0.68s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:86.3%;top:84.0%;--sx:77.0%;--sy:48.1%;--d:0.59s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:86.3%;top:79.4%;--sx:77.1%;--sy:40.2%;--d:0.88s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:90.2%;top:84.0%;--sx:77.3%;--sy:60.3%;--d:0.64s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig a-sort" style="left:94.0%;top:84.0%;--sx:79.4%;--sy:52.7%;--d:0.92s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig you a-sort" style="left:63.4%;top:56.4%;--sx:50%;--sy:72%;--d:.5s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<span class="cm-tag a-fade" style="left:63.4%;top:49.4%;--d:1.6s">You</span>
+            <div class="cm-axis"><span>$0</span><span>$163k+</span></div>
           </div>
         </div>
+
+        <div class="scene" data-cap="Zoom from the whole crowd down to you. A spotlight closes in on your nearest neighbors.">
+          <div class="cm-arena">
+            <div class="t"><h4 class="a-fade" style="--d:1.6s">Your group up close</h4><p class="a-fade" style="--d:1.8s">The 10 people most like you, lit up around you.</p></div>
+            <div class="cm-crowd a-zoom"><svg class="cm-fig hi a-hi" style="left:47.2%;top:71.4%;--d:1.20s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig hi a-hi" style="left:52.4%;top:69.4%;--d:1.28s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig hi a-hi" style="left:56.2%;top:71.4%;--d:1.36s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig hi a-hi" style="left:49.5%;top:65.7%;--d:1.44s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig hi a-hi" style="left:44.1%;top:75.1%;--d:1.52s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig hi a-hi" style="left:55.0%;top:76.5%;--d:1.60s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig hi a-hi" style="left:47.9%;top:78.7%;--d:1.68s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig hi a-hi" style="left:45.0%;top:67.0%;--d:1.76s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig hi a-hi" style="left:41.4%;top:70.6%;--d:1.84s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig hi a-hi" style="left:56.0%;top:65.3%;--d:1.92s" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:52.7%;top:80.8%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:52.5%;top:62.0%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:60.6%;top:71.5%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:59.9%;top:76.7%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:44.5%;top:81.5%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:40.4%;top:77.4%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:44.6%;top:61.7%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:60.1%;top:66.1%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:40.1%;top:65.6%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:49.6%;top:84.3%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:58.1%;top:81.4%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:48.4%;top:59.6%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:37.4%;top:72.4%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:57.6%;top:60.1%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:55.4%;top:85.5%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:40.6%;top:83.3%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:40.5%;top:60.4%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:36.3%;top:78.4%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:35.8%;top:66.9%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:64.9%;top:75.1%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:65.1%;top:69.9%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:45.9%;top:86.9%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:52.8%;top:56.6%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:63.7%;top:80.1%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:64.2%;top:64.8%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:33.3%;top:72.6%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:61.8%;top:59.8%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:52.0%;top:89.0%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:61.5%;top:84.9%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:47.8%;top:54.6%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:43.0%;top:55.6%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:35.6%;top:61.3%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:56.7%;top:55.1%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:36.3%;top:84.0%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:32.1%;top:78.1%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:31.7%;top:66.4%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:69.7%;top:71.8%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:69.1%;top:77.1%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:51.7%;top:52.0%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:69.4%;top:66.5%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:36.9%;top:56.4%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:67.6%;top:82.3%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:68.0%;top:61.7%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:29.2%;top:71.6%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:65.4%;top:57.3%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:61.3%;top:53.9%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:44.9%;top:50.9%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:31.5%;top:60.3%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:39.8%;top:52.5%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:27.8%;top:76.7%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:27.8%;top:64.6%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:74.1%;top:72.3%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:58.8%;top:49.6%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:54.8%;top:48.1%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:32.6%;top:54.8%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:74.0%;top:66.8%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:25.3%;top:69.3%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:50.3%;top:47.1%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:73.0%;top:61.6%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:64.3%;top:50.5%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:71.1%;top:57.0%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:68.2%;top:53.2%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:27.8%;top:57.9%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:34.9%;top:50.2%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:42.5%;top:46.5%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:38.2%;top:47.2%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:24.3%;top:61.7%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:46.9%;top:44.5%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:61.4%;top:45.3%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:29.1%;top:51.7%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:53.4%;top:42.9%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:77.3%;top:60.3%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:57.5%;top:42.6%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:75.6%;top:55.3%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:24.8%;top:54.3%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:66.1%;top:45.7%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:73.2%;top:51.1%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:31.6%;top:46.6%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:70.0%;top:47.8%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:42.9%;top:41.2%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:21.3%;top:57.7%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:48.8%;top:39.9%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:34.9%;top:42.9%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:38.8%;top:41.0%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:26.6%;top:47.7%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:62.3%;top:40.2%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:52.6%;top:37.3%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:79.4%;top:52.7%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:22.4%;top:49.9%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:57.4%;top:37.4%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:45.6%;top:36.4%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:66.6%;top:40.1%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:77.0%;top:48.1%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:29.4%;top:42.2%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:74.0%;top:44.3%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:70.5%;top:41.6%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:33.1%;top:38.1%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:41.6%;top:35.1%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:37.3%;top:35.7%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:24.8%;top:42.9%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:50.1%;top:33.3%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:61.5%;top:34.9%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:55.7%;top:32.6%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:20.7%;top:44.7%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:65.6%;top:34.2%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:28.3%;top:37.2%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:46.4%;top:30.7%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:77.1%;top:40.2%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:69.7%;top:35.0%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:73.5%;top:37.1%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:32.5%;top:33.0%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:42.0%;top:29.7%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:59.3%;top:29.8%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:23.9%;top:37.6%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:52.6%;top:28.7%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:37.2%;top:30.4%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:63.3%;top:28.6%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:28.1%;top:31.8%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:48.4%;top:26.0%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:67.4%;top:28.6%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:55.8%;top:25.5%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:75.6%;top:32.3%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:71.6%;top:29.9%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:33.0%;top:27.7%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:43.5%;top:24.9%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:38.2%;top:25.4%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:59.7%;top:23.6%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:51.3%;top:22.4%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:28.8%;top:26.4%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:63.8%;top:22.8%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:46.0%;top:20.7%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:34.4%;top:22.6%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:68.2%;top:23.2%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:40.2%;top:20.7%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:54.9%;top:19.7%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:59.0%;top:18.0%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:49.3%;top:17.3%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:43.1%;top:16.6%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig " style="left:53.2%;top:14.7%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<svg class="cm-fig you" style="left:50.0%;top:72.0%;" viewBox="0 0 8 14"><use href="#cmf"/></svg>
+<span class="cm-ring" style="left:50%;top:72%;margin-top:-19px"></span></div>
+            <div class="cm-spot a-fade" style="--d:1s"></div>
+            <div class="cm-slider"><span>CROWD</span><i><b class="a-left" style="left:82%;--from:10%;--d:.1s"></b></i><span style="color:#F2B33D">YOU</span></div>
+          </div>
+        </div>
+
+        <div class="scene" data-cap="Meet your closest matches: what you have in common, and where you differ.">
+          <div class="cm-h">Your 10 closest matches</div>
+          <div class="cm-card a-up" style="--d:.1s"><div style="display:flex;align-items:center;gap:10px"><svg class="cm-av" viewBox="0 0 8 14"><use href="#cmf"/></svg><b class="f1">Match #1</b><span class="cm-pct">94% alike</span></div><div class="cm-bar"><b class="a-x" style="width:94%;--d:.4s"></b></div><div class="cm-tags"><span>Night owl</span><span>Dogs</span><span>Hiking &amp; outdoors</span></div></div>
+          <div class="cm-card a-up" style="--d:.3s"><div style="display:flex;align-items:center;gap:10px"><svg class="cm-av" viewBox="0 0 8 14"><use href="#cmf"/></svg><b class="f1">Match #2</b><span class="cm-pct">89% alike</span></div><div class="cm-bar"><b class="a-x" style="width:89%;--d:.6s"></b></div><div class="cm-tags"><span>Love pineapple</span><span>Hybrid work</span><span class="d">Coffee: 4 cups vs your 1</span></div></div>
+          <div class="cm-card a-up" style="--d:.5s"><div style="display:flex;align-items:center;gap:10px"><svg class="cm-av" viewBox="0 0 8 14"><use href="#cmf"/></svg><b class="f1">Match #3</b><span class="cm-pct">86% alike</span></div><div class="cm-bar"><b class="a-x" style="width:86%;--d:.8s"></b></div><div class="cm-tags"><span>Cooking</span><span>7 h sleep</span><span class="d">Cats vs your dogs</span></div></div>
+        </div>
+
+        <div class="scene" data-cap="Share a card with your most surprising stat, drawn as a crowd of 100.">
+          <div class="cm-share a-pop">
+            <div class="cm-mark" style="font-size:20px;color:#EEF2F8">compare<span>me</span></div>
+            <div class="cm-stat">You sleep more than <em>82%</em> of people</div>
+            <div class="cm-grid"><svg class="cm-g lo a-fade" style="--d:0.30s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.30s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.30s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.30s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.30s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.30s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.30s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.30s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.30s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.30s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.39s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.39s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.39s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.39s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.39s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.39s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.39s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.39s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.39s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.39s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.48s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.48s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.48s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.48s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.48s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.48s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.48s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.48s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.48s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.48s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.57s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.57s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.57s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.57s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.57s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.57s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.57s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.57s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.57s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.57s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.66s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.66s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.66s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.66s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.66s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.66s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.66s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.66s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.66s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.66s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.75s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.75s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.75s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.75s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.75s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.75s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.75s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.75s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.75s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.75s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.84s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.84s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.84s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.84s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.84s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.84s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.84s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.84s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.84s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.84s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.93s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.93s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.93s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.93s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.93s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.93s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.93s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.93s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.93s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:0.93s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:1.02s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g lo a-fade" style="--d:1.02s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g you a-fade" style="--d:1.02s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g  a-fade" style="--d:1.02s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g  a-fade" style="--d:1.02s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g  a-fade" style="--d:1.02s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g  a-fade" style="--d:1.02s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g  a-fade" style="--d:1.02s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g  a-fade" style="--d:1.02s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g  a-fade" style="--d:1.02s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g  a-fade" style="--d:1.11s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g  a-fade" style="--d:1.11s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g  a-fade" style="--d:1.11s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g  a-fade" style="--d:1.11s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g  a-fade" style="--d:1.11s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g  a-fade" style="--d:1.11s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g  a-fade" style="--d:1.11s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g  a-fade" style="--d:1.11s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g  a-fade" style="--d:1.11s" viewBox="0 0 8 14"><use href="#cmf"/></svg><svg class="cm-g  a-fade" style="--d:1.11s" viewBox="0 0 8 14"><use href="#cmf"/></svg></div>
+            <div class="cm-num" style="color:#8C99AD">robbiestells.github.io/compareme</div>
+          </div>
+        </div>
+
       </div>
     </div>
-    <div class="cap" aria-live="polite"><span class="cap-n mono"></span><span class="cap-t"></span></div>
+    <div class="cap" aria-live="polite"><span class="cap-n"></span><span class="cap-t"></span></div>
     <div class="segs"></div>
   </div>
   <div class="pv-info">
     <div class="tag mono"><span class="dot beta pulse"></span>In beta · Social</div>
-    <h2 id="pv-title">compareme</h2>
-    <p class="lede">Ever wonder how your life stacks up? compareme starts with a few details about you, like age, gender and location, then asks questions about money, lifestyle, work and education, plus some just for fun. Filter everyone else's answers down to people like you and see where you land.</p>
+    <h2 id="pv-title" aria-label="compareme">compare<span>me</span></h2>
+    <p class="lede">Answer a few questions about yourself, then step into a crowd and see where you blend in and where you stand apart. Every person is a little figure in a night-time arena that sorts itself by whatever question you pick. Zoom from the whole crowd down to you, meet your closest matches, and share a card that draws your standout stat as a crowd of 100.</p>
     <h3 class="mono">What it does</h3>
     <ol class="feats">
-      <li><span><b>A quick profile</b>Age, gender, location and a few other basics set up who you're compared against.</span></li>
-      <li><span><b>Four kinds of questions</b>Money, lifestyle, work and education, and fun or opinion questions.</span></li>
-      <li><span><b>Filter by people like you</b>Narrow the crowd by any combination of demographics.</span></li>
-      <li><span><b>See where you land</b>Your answer plotted against everyone in the group you picked.</span></li>
+      <li><span><b>You</b>A few demographics plus questions on money, work, lifestyle and fun. Skip anything you'd rather not answer.</span></li>
+      <li><span><b>The crowd</b>Number questions become line-ups along a scale, choice questions split into groups, and "Most like me" pulls the people closest to you nearer.</span></li>
+      <li><span><b>Zoom and stand out</b>A spotlight closes in on your nearest neighbors, and "Where I stand out" tours your most unusual answers.</span></li>
+      <li><span><b>Matches</b>Your 10 closest matches, with what you share and where you differ.</span></li>
+      <li><span><b>Share and ideas</b>A shareable stat card, plus a place to suggest and vote on new questions.</span></li>
+      <li><span><b>Private by design</b>Answers are anonymous, sign-in is an email link, and results only show when at least 3 people match.</span></li>
     </ol>
     <h3 class="mono">Built with</h3>
     <div class="stack"><span>Supabase</span><span>GitHub Pages</span></div>
@@ -964,9 +1376,11 @@ dialog.pv::backdrop{background:transparent}
       <a class="go" href="https://robbiestells.github.io/compareme/">Open the beta ↗</a>
       <a class="ghost" href="https://github.com/robbiestells/compareme">View the code</a>
     </div>
+    <p class="beta-note">It's in beta. Until enough real people have answered, the crowd is filled with clearly labeled sample people.</p>
   </div>
 </div>
 </template>
+
 
 <!-- ---------- Spending Tracker / Runway (styled like the app: calm teal, rounded cards) ---------- -->
 <template id="pv-spending-tracker">
@@ -1141,7 +1555,7 @@ dialog.pv::backdrop{background:transparent}
     if (fontsLoaded) return; fontsLoaded = true;
     const l = document.createElement('link');
     l.rel = 'stylesheet';
-    l.href = 'https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&family=Pixelify+Sans:wght@400;500;600&family=VT323&family=Permanent+Marker&family=Noto+Sans+Symbols+2&display=swap';
+    l.href = 'https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Atkinson+Hyperlegible:wght@400;700&family=Spline+Sans+Mono:wght@400;500&family=Pixelify+Sans:wght@400;500;600&family=VT323&family=Permanent+Marker&family=Noto+Sans+Symbols+2&display=swap';
     document.head.append(l);
   };
   document.querySelectorAll('.tile[data-preview]').forEach((t) => {
