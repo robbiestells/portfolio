@@ -45,8 +45,9 @@ nav a:hover,nav a.solid{background:var(--ink);color:var(--ground)}
 /* hero */
 .hero{padding-top:56px;padding-bottom:64px}
 h1{margin:0;font-size:clamp(48px,8.4vw,132px);line-height:.95;letter-spacing:-.045em;font-weight:800}
-.cyc{display:inline-block;height:1.05em;overflow:hidden;vertical-align:bottom;color:var(--blue)}
-.cyc span{display:block;animation:cyc 10s cubic-bezier(.8,0,.2,1) infinite}
+.cyc{display:inline-block;height:1.05em;line-height:1.05;overflow:hidden;vertical-align:bottom;color:var(--blue);font-size:min(1em,9.4vw);max-width:100%}
+.cyc span{display:block;height:1.05em;white-space:nowrap;animation:cyc 10s cubic-bezier(.8,0,.2,1) infinite}
+@media (prefers-reduced-motion:reduce){.cyc span{animation:none}}
 @keyframes cyc{0%,20%{transform:translateY(0)}25%,45%{transform:translateY(-100%)}50%,70%{transform:translateY(-200%)}75%,95%{transform:translateY(-300%)}100%{transform:translateY(-400%)}}
 .hero-foot{display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:flex-end;margin-top:32px}
 .hero p{margin:0;max-width:520px;font-size:20px;line-height:1.45;color:var(--ink-2)}
