@@ -11,6 +11,7 @@ A single-page portfolio for the apps and tools I've been building. Every project
 | 03 | Mise en Place | In beta | https://robbiestells.github.io/recipe-book/ |
 | 04 | compareme | In beta | https://robbiestells.github.io/compareme/ |
 | 05 | Spending Tracker | In beta | https://robbiestells.github.io/budgetrunway/ |
+| 06 | Noche Azul (Latin-jazz rhythm game) | In beta | https://robbiestells.github.io/jazzgame/ |
 
 ## Editing
 
