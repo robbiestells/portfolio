@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>robbiestells</title>
-<meta name="description" content="Apps and tools built by robbiestells: Blunder Lab, Dividend Kingdom, Mise en Place, compareme, Spending Tracker and Noche Azul.">
+<meta name="description" content="Apps and tools built by robbiestells: Blunder Lab, Dividend Kingdom, Mise en Place, compareme, Spending Tracker, Noche Azul and Galactic Gridlock.">
 <meta property="og:title" content="robbiestells">
 <meta property="og:description" content="Chess trainers, money tools, recipe engines, a Latin-jazz rhythm game and more. Every tile is a tiny working preview.">
 <meta name="theme-color" content="#ECE9E2">
@@ -178,6 +178,34 @@ h1{margin:0;font-size:clamp(48px,8.4vw,132px);line-height:.95;letter-spacing:-.0
 .pv-grid.g-na .pv-info h2{font:800 clamp(46px,5vw,70px)/.92 'Shippori Mincho B1',Georgia,serif;text-transform:uppercase;letter-spacing:.04em}
 .pv-grid.g-na .pv-info h2 span{color:#2F4BFF}
 .pv-grid.g-na{--fa:#ffb84d;--fi:#2a1604}
+
+/* ---------- Galactic Gridlock ---------- */
+.gg-tile{background:#16100c;color:#f6e7d8;flex-direction:row;flex-wrap:wrap;gap:28px;align-items:stretch}
+.gg-tile h2,.gg-title{font:900 clamp(38px,4.4vw,66px)/.92 'Arial Black',Impact,system-ui,sans-serif;letter-spacing:.01em;text-transform:uppercase;margin:12px 0 0}
+.gg-tile h2 span,.gg-title span{color:#ff8a2b}
+.gg-tile .peek{background:#ff8a2b;color:#2a1204}
+.gg-stage,.gg-scr{position:relative;border-radius:18px;overflow:hidden;background:radial-gradient(120% 90% at 78% 0%,rgba(255,110,30,.3),transparent 55%),linear-gradient(#2a1710,#16100c)}
+.gg-stage{flex:1.6 1 460px;min-height:220px}
+.gg-shot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.gg-stage .gg-shot{opacity:0;animation:naFade 15s infinite}
+.gg-stage .gg-shot:nth-of-type(2){animation-delay:5s}.gg-stage .gg-shot:nth-of-type(3){animation-delay:10s}
+.gg-stage::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(rgba(22,16,12,0) 50%,rgba(22,16,12,.8))}
+.gg-pop{position:absolute;left:6%;bottom:12%;z-index:2;font:900 italic 30px/1 'Arial Black',Impact,sans-serif;color:#ffe2b0;text-shadow:3px 3px 0 #1a0c04,0 0 18px rgba(255,120,30,.8);text-transform:uppercase;animation:naPop 3s cubic-bezier(.3,1.6,.5,1) infinite}
+@media (prefers-reduced-motion:reduce){.gg-stage .gg-shot:first-of-type{animation:none;opacity:1}.gg-pop{animation:none}}
+.th-gg{--pc:#16100c;--pi:#f6e7d8;--flash:#ff8a2b}
+.gg-scr{flex:1;min-height:300px;display:flex;flex-direction:column;justify-content:flex-end;gap:10px;padding:14px}
+.gg-scr::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(rgba(22,16,12,.2),rgba(22,16,12,0) 40%,rgba(22,16,12,.85))}
+.gg-scr>*:not(.gg-shot){position:relative;z-index:1}
+.gg-ban{align-self:flex-start;background:#ff8a2b;color:#2a1204;padding:5px 14px;font:900 13px/1.1 'Arial Black',Impact,sans-serif;letter-spacing:.14em;text-transform:uppercase;transform:skewX(-10deg)}
+.gg-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.gg-row span{border:1px solid rgba(255,160,90,.35);border-radius:8px;padding:10px;font-size:12px;color:#d9bfa8;background:rgba(22,16,12,.78)}
+.gg-row span b{display:block;font:800 15px/1.2 system-ui,sans-serif;color:#f6e7d8;margin-bottom:4px}
+.gg-row span.on{border-color:#ff8a2b;box-shadow:0 0 0 1px #ff8a2b}.gg-row span.on b{color:#ff8a2b}
+.gg-eye{font:700 11px/1 'IBM Plex Mono',monospace;letter-spacing:.2em;text-transform:uppercase;color:#d9bfa8}
+.gg-big{font:900 italic clamp(60px,9vw,110px)/1 'Arial Black',Impact,sans-serif;color:#ff8a2b;text-shadow:5px 5px 0 #1a0c04,0 0 40px rgba(255,120,30,.55);text-align:center}
+.pv-grid.g-gg .pv-info h2{font:900 clamp(40px,4.6vw,64px)/.92 'Arial Black',Impact,sans-serif;text-transform:uppercase}
+.pv-grid.g-gg .pv-info h2 span{color:#e8610a}
+.pv-grid.g-gg{--fa:#ff8a2b;--fi:#2a1204}
 
 /* small refreshes for other previews */
 .dq-mound{position:absolute;left:50%;bottom:0;width:86%;height:0;margin-left:-43%;border-radius:50% 50% 0 0/100% 100% 0 0;
@@ -769,6 +797,23 @@ dialog.pv::backdrop{background:transparent}
     <span class="peek mono">Preview <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C8F23C"/><path d="M12 7v10M7 12h10" stroke="#111" stroke-width="2"/></svg></span>
     <span class="shine"></span>
   </a>
+
+  <!-- 07 Galactic Gridlock -->
+  <a href="galactic-gridlock/" data-preview="galactic-gridlock" class="tile s61 reveal gg-tile">
+    <div style="flex:1 1 260px;display:flex;flex-direction:column;justify-content:space-between;min-width:0">
+      <div>
+        <div class="tag mono"><span class="dot beta pulse"></span>07 · RACING DECKBUILDER · PROTOTYPE</div>
+        <h2>Galactic <span>Gridlock</span></h2>
+        <p style="max-width:380px;color:#e8d5c4">A combat-racing card game on a tabletop diorama. Everyone plays a card at once, then four miniature cars race a lava-world figure-8 and shoot it out.</p>
+      </div>
+    </div>
+    <div class="gg-stage" aria-hidden="true">
+      <img class="gg-shot" src="img/gg-board.webp" alt="" loading="lazy"><img class="gg-shot" src="img/gg-cars.webp" alt="" loading="lazy"><img class="gg-shot" src="img/gg-bridge.webp" alt="" loading="lazy">
+      <span class="gg-pop">Lap 3!</span>
+    </div>
+    <span class="peek mono">Preview <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#C8F23C"/><path d="M12 7v10M7 12h10" stroke="#111" stroke-width="2"/></svg></span>
+    <span class="shine"></span>
+  </a>
 </section>
 
 <section id="about" class="wrap" style="margin-top:16px">
@@ -878,6 +923,62 @@ dialog.pv::backdrop{background:transparent}
       <a class="go" href="https://robbiestells.github.io/jazzgame/">Play the 3D demo ↗</a>
     </div>
     <p class="beta-note">It's in beta: one night at the club so far, with more of the story on the way. Headphones help.</p>
+  </div>
+</div>
+</template>
+
+<!-- ---------- Galactic Gridlock ---------- -->
+<template id="pv-galactic-gridlock">
+<div class="pv-grid g-gg" style="--pc:#16100c;--pi:#f6e7d8">
+  <div class="pv-demo th-gg">
+    <div class="pv-top"><span>Galactic Gridlock · playable prototype</span>
+      <button class="pv-play" type="button" aria-label="Pause demo"><svg class="i-pause" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="1" width="3.5" height="12" fill="currentColor"/><rect x="8.5" y="1" width="3.5" height="12" fill="currentColor"/></svg><svg class="i-play" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1.5l9 5.5-9 5.5z" fill="currentColor"/></svg></button>
+    </div>
+    <div class="stage">
+      <div class="app" aria-hidden="true">
+
+        <div class="scene" data-cap="Each round everyone locks in one card at the same time. Sprint, swerve, missile or shield, and nobody sees the others' picks until the reveal.">
+          <div class="gg-scr"><img class="gg-shot" src="img/gg-board.webp" alt=""><span class="gg-ban a-up">1 Pick · 2 Reveal · 3 Race</span></div>
+        </div>
+
+        <div class="scene" data-cap="Four tiers of hand-built miniature cars, with slicks, spikes, treads or hover gear. The models are generated in code, then weathered with grime and chips.">
+          <div class="gg-scr"><img class="gg-shot" src="img/gg-cars.webp" alt=""><span class="gg-ban a-up">Ember · Ghost · Spike · Scorch</span></div>
+        </div>
+
+        <div class="scene" data-cap="Cars keep moving while rockets and gatlings land. Lava, scrap and pickups shape the track, and anyone behind gets a slipstream draft to catch up.">
+          <div class="gg-scr"><img class="gg-shot" src="img/gg-bridge.webp" alt=""><span class="gg-ban a-up">Inferno figure-8</span><div class="gg-row a-up" style="--d:.3s"><span class="on"><b>Draft</b>Catch-up speed for trailing cars</span><span><b>Missile</b>Chases its target</span><span><b>+Health</b>Guaranteed pickup</span><span><b>Lava</b>Burns anyone who slips</span></div></div>
+        </div>
+
+        <div class="scene" data-cap="The race ends when you cross the line. First place pays $500, second $300, third $150 and fourth nothing.">
+          <div class="gg-eye a-up" style="text-align:center">Prize money</div>
+          <div class="gg-big a-pop" style="--d:.3s">$500</div>
+          <p class="a-up" style="--d:.9s;text-align:center;margin:0;font:700 16px/1.4 system-ui,sans-serif">$500 · $300 · $150 · $0</p>
+        </div>
+
+      </div>
+    </div>
+    <div class="cap" aria-live="polite"><span class="cap-n"></span><span class="cap-t"></span></div>
+    <div class="segs"></div>
+  </div>
+  <div class="pv-info">
+    <div class="tag mono"><span class="dot beta pulse"></span>Prototype · Racing deckbuilder</div>
+    <h2 id="pv-title">Galactic <span>Gridlock</span></h2>
+    <p class="lede">A tabletop-diorama combat racer where every move is a card. You and three rivals race three laps around a lava-world figure-8, picking cards simultaneously, then watching the miniatures drive, swerve and blast each other.</p>
+    <h3 class="mono">What it does</h3>
+    <ol class="feats">
+      <li><span><b>Simultaneous cards</b>Everyone locks in a card, then all four cars move in lockstep. Outguessing the table is the game.</span></li>
+      <li><span><b>Combat that keeps moving</b>Missiles chase their target and gatlings rake the field, all while the cars keep driving.</span></li>
+      <li><span><b>Catch-up built in</b>A slipstream draft boosts trailing cars, and pickups, including a guaranteed +Health, favor whoever is last.</span></li>
+      <li><span><b>Prize money</b>The race runs until you cross the line. 1st earns $500, 2nd $300, 3rd $150 and 4th nothing.</span></li>
+      <li><span><b>Tiered miniatures</b>Modular cars in three tiers with slicks, spikes, treads or hover gear, weathered to look like painted models.</span></li>
+      <li><span><b>Filmic tabletop look</b>Ambient occlusion, bloom, tilt-shift depth of field and ACES tone mapping give the board a macro-photo feel.</span></li>
+    </ol>
+    <h3 class="mono">Built with</h3>
+    <div class="stack"><span>three.js</span><span>WebGL</span><span>Custom post-processing</span><span>Web Audio API</span><span>GitHub Pages</span></div>
+    <div class="pv-cta">
+      <a class="go" href="galactic-gridlock/">Play the prototype ↗</a>
+    </div>
+    <p class="beta-note">It's an early prototype: one Inferno track for now. It works best on a desktop with a GPU.</p>
   </div>
 </div>
 </template>
