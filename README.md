@@ -12,6 +12,7 @@ A single-page portfolio for the apps and tools I've been building. Every project
 | 04 | compareme | In beta | https://robbiestells.github.io/compareme/ |
 | 05 | Spending Tracker | In beta | https://robbiestells.github.io/budgetrunway/ |
 | 06 | Noche Azul (Latin-jazz rhythm game) | In beta | https://robbiestells.github.io/jazzgame/ |
+| 07 | Galactic Gridlock (combat-racing deckbuilder) | Prototype | https://robbiestells.github.io/portfolio/galactic-gridlock/ |
 
 ## Editing
 
