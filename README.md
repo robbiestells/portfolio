@@ -6,12 +6,13 @@ A single-page portfolio for the apps and tools I've been building. Every project
 
 | # | Project | Status | Link |
 |---|---------|--------|------|
-| 01 | Blunder Lab | In beta | https://robbiestells.github.io/blunder-lab/ |
-| 02 | Dividend Buy Planner | In beta | https://robbiestells.github.io/dividend-buy-planner/ |
-| 03 | Mise en Place | In beta | https://robbiestells.github.io/recipe-book/ |
-| 04 | compareme | In beta | https://robbiestells.github.io/compareme/ |
-| 05 | Spending Tracker | In beta | https://robbiestells.github.io/budgetrunway/ |
-| 06 | Noche Azul (Latin-jazz rhythm game) | In beta | https://robbiestells.github.io/jazzgame/ |
+| 01 | Are We Doomed | In beta | https://robbiestells.github.io/Doomed/ |
+| 02 | Blunder Lab | In beta | https://robbiestells.github.io/blunder-lab/ |
+| 03 | Dividend Buy Planner | In beta | https://robbiestells.github.io/dividend-buy-planner/ |
+| 04 | Mise en Place | In beta | https://robbiestells.github.io/recipe-book/ |
+| 05 | compareme | In beta | https://robbiestells.github.io/compareme/ |
+| 06 | Spending Tracker | In beta | https://robbiestells.github.io/budgetrunway/ |
+| 07 | Noche Azul (Latin-jazz rhythm game) | In beta | https://robbiestells.github.io/jazzgame/ |
 
 ## Editing
 
