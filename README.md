@@ -6,7 +6,7 @@ A single-page portfolio for the apps and tools I've been building. Every project
 
 | # | Project | Status | Link |
 |---|---------|--------|------|
-| 01 | Are We Doomed | In beta | https://robbiestells.github.io/Doomed/ |
+| 01 | Are We Doomed | Live | https://robbiestells.github.io/Doomed/ |
 | 02 | Blunder Lab | In beta | https://robbiestells.github.io/blunder-lab/ |
 | 03 | Dividend Buy Planner | In beta | https://robbiestells.github.io/dividend-buy-planner/ |
 | 04 | Mise en Place | In beta | https://robbiestells.github.io/recipe-book/ |
