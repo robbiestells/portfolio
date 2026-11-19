@@ -656,7 +656,7 @@ dialog.pv::backdrop{background:transparent}
 <section id="work" class="wrap bento" aria-label="Projects">
 
   <!-- 01 Are We Doomed -->
-  <a href="https://robbiestells.github.io/Doomed/" class="tile s61 reveal dm-tile">
+  <a href="https://robbiestells.github.io/Doomed/" data-preview="doomed" data-preview-always class="tile s61 reveal dm-tile">
     <div style="flex:1 1 260px;display:flex;flex-direction:column;justify-content:space-between;min-width:0">
       <div>
         <div class="tag mono"><span class="dot live"></span>01 · OUTAGES · LIVE</div>
@@ -672,7 +672,7 @@ dialog.pv::backdrop{background:transparent}
       </div>
       <div class="dm-gauge"><svg viewBox="0 0 200 112" width="100%" aria-hidden="true"><path d="M34.0 98.3A66 66 0 0 1 45.6 62.6" fill="none" stroke="#3DDBB0" stroke-opacity="1" stroke-width="24"/><path d="M47.6 59.9A66 66 0 0 1 78.0 37.8" fill="none" stroke="#3DDBB0" stroke-opacity="0.55" stroke-width="24"/><path d="M81.2 36.7A66 66 0 0 1 118.8 36.7" fill="none" stroke="#4A5762" stroke-opacity="0.9" stroke-width="24"/><path d="M122.0 37.8A66 66 0 0 1 152.4 59.9" fill="none" stroke="#F2A93B" stroke-opacity="0.9" stroke-width="24"/><path d="M154.4 62.6A66 66 0 0 1 166.0 98.3" fill="none" stroke="#FF4D3D" stroke-opacity="1" stroke-width="24"/><g class="dm-needle" style="transform-origin:100px 100px"><line x1="100" y1="100" x2="100" y2="32" stroke="#D8DEE4" stroke-width="4" stroke-linecap="round"/></g><circle cx="100" cy="100" r="7" fill="#D8DEE4"/></svg><div class="dm-lab" style="text-align:center;margin-top:4px">Calm &nbsp;···&nbsp; Doomed</div></div>
     </div>
-    <span class="peek mono">Check if we’re doomed <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#0A0D10"/><path d="M8 16l8-8M9 8h7v7" stroke="#E8F23A" stroke-width="2" fill="none"/></svg></span>
+    <span class="peek mono">Preview <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#0A0D10"/><path d="M12 7v10M7 12h10" stroke="#E8F23A" stroke-width="2"/></svg></span>
     <span class="shine"></span>
   </a>
 
@@ -874,6 +874,90 @@ dialog.pv::backdrop{background:transparent}
 <!-- Each template = one preview. Scenes play in order; data-cap is the caption under the demo. -->
 
 <!-- ---------- Noche Azul (styled like the game: night club, notation, colored pads) ---------- -->
+<template id="pv-doomed">
+<div class="pv-grid g-dm" style="--pc:#0A0D10;--pi:#D8DEE4">
+  <div class="pv-demo th-dm">
+    <div class="pv-top"><span>Are We Doomed · demo</span>
+      <button class="pv-play" type="button" aria-label="Pause demo"><svg class="i-pause" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="1" width="3.5" height="12" fill="currentColor"/><rect x="8.5" y="1" width="3.5" height="12" fill="currentColor"/></svg><svg class="i-play" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1l9 6-9 6z" fill="currentColor"/></svg></button>
+    </div>
+    <div class="stage">
+      <div class="app" aria-hidden="true">
+
+        <div class="scene" data-cap="A big counter of days since the last widely reported outage. It resets the day a new one hits.">
+          <div class="dm-center">
+            <span class="dm-eye a-up">This internet has gone</span>
+            <div class="dm-digits a-pop" style="--d:.2s"><i>0</i><i>0</i><i>0</i><i class="dm-last"><span class="dm-roll"><b>1</b><b>2</b><b>3</b><b>4</b><b>0</b></span></i></div>
+            <span class="dm-eye a-up" style="--d:.5s;color:#7D8A96">days without a widely reported outage</span>
+          </div>
+        </div>
+
+        <div class="scene" data-cap="Last 28 days of news-reported outages against the 28 before and the usual month. It only counts outages that touch daily or work life.">
+          <div class="dm-center">
+            <span class="dm-eye a-up">Are outages becoming more prevalent?</span>
+            <div class="dm-word a-pop" style="--d:.3s">Higher than usual</div>
+            <div class="dm-cmp a-up" style="--d:.6s"><div><b>8</b><span>last 28 days</span></div><div><b>4</b><span>28 days before</span></div><div><b>2.6</b><span>typical 28 days</span></div></div>
+          </div>
+        </div>
+
+        <div class="scene" data-cap="The doom meter blends five signals: how often, how long it stays high, how widely it spreads, pile-ups, and slow recovery.">
+          <div class="dm-center">
+            <div class="dm-g"><svg viewBox="0 0 200 112" width="100%" aria-hidden="true"><path d="M34.0 98.3A66 66 0 0 1 45.6 62.6" fill="none" stroke="#3DDBB0" stroke-opacity="1" stroke-width="24"/><path d="M47.6 59.9A66 66 0 0 1 78.0 37.8" fill="none" stroke="#3DDBB0" stroke-opacity="0.55" stroke-width="24"/><path d="M81.2 36.7A66 66 0 0 1 118.8 36.7" fill="none" stroke="#4A5762" stroke-opacity="0.9" stroke-width="24"/><path d="M122.0 37.8A66 66 0 0 1 152.4 59.9" fill="none" stroke="#F2A93B" stroke-opacity="0.9" stroke-width="24"/><path d="M154.4 62.6A66 66 0 0 1 166.0 98.3" fill="none" stroke="#FF4D3D" stroke-opacity="1" stroke-width="24"/><g class="dm-ns" style="transform-origin:100px 100px"><line x1="100" y1="100" x2="100" y2="32" stroke="#D8DEE4" stroke-width="4" stroke-linecap="round"/></g><circle cx="100" cy="100" r="7" fill="#D8DEE4"/></svg></div>
+            <div class="dm-word a-pop" style="--d:1.4s;color:#F2A93B;font-size:clamp(22px,3.4vw,34px)">Getting doomier</div>
+            <div class="dm-row a-up" style="--d:.4s"><span>Frequency</span><span class="tr"><i class="a-x" style="--d:.6s;width:100%;background:#FF4D3D"></i></span><span>100</span></div>
+            <div class="dm-row a-up" style="--d:.5s"><span>Staying high</span><span class="tr"><i class="a-x" style="--d:.7s;width:50%;background:#F2A93B"></i></span><span>50</span></div>
+            <div class="dm-row a-up" style="--d:.6s"><span>Spreading wider</span><span class="tr"><i class="a-x" style="--d:.8s;width:100%;background:#FF4D3D"></i></span><span>100</span></div>
+          </div>
+        </div>
+
+        <div class="scene" data-cap="Scroll a timeline of dates. Every dot is a day with an outage. Tap one to see what broke.">
+          <div class="dm-center">
+            <span class="dm-eye a-up">Timeline · last 30 days</span>
+            <div class="dm-line a-up" style="--d:.2s">
+              <span class="dm-dot a-pop" style="left:12%;--d:.5s;opacity:.9"></span><span class="dm-dot a-pop" style="left:27%;--d:.65s"></span><span class="dm-dot a-pop" style="left:41%;--d:.8s"></span><span class="dm-dot sel a-pop" style="left:66%;--d:1.0s"></span><span class="dm-dot a-pop" style="left:80%;--d:1.15s"></span><span class="dm-dot a-pop" style="left:91%;--d:1.3s"></span>
+            </div>
+            <div class="dm-detail a-up" style="--d:1.5s">Tuesday, Nov 17 · 2 outages<br><b>Apple:</b> iCloud and App Store down for hours<small>Software change · 39 articles</small></div>
+          </div>
+        </div>
+
+        <div class="scene" data-cap="Opinion, politicians reacting and explainers are filtered out, and AI companies' own outages are left out unless banks or airlines were hit.">
+          <div class="dm-center">
+            <span class="dm-eye a-up">What it leaves out</span>
+            <ul class="dm-no">
+              <li class="a-up" style="--d:.3s">Commentary and reactions<s>"Trump says he's not worried about outages"</s></li>
+              <li class="a-up" style="--d:.6s">AI companies' own outages<s>unless another industry was hit</s></li>
+              <li class="a-up" style="--d:.9s">Developer-only infrastructure<s>unless the press covered it widely</s></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="cap" aria-live="polite"><span class="cap-n"></span><span class="cap-t"></span></div>
+    <div class="segs"></div>
+  </div>
+  <div class="pv-info">
+    <div class="tag mono"><span class="dot live"></span>Live · Outages</div>
+    <h2 id="pv-title">Are We <span>Doomed</span></h2>
+    <p class="lede">A dashboard that gathers the outages people actually notice, from banks and airlines to the apps and tools they work in, and asks whether they are becoming more prevalent. A big counter shows the days since the last one.</p>
+    <h3 class="mono">What it does</h3>
+    <ol class="feats">
+      <li><span><b>Days without an outage</b>A split-flap counter that resets the day a new widely reported outage lands.</span></li>
+      <li><span><b>Is it getting worse?</b>Compares the last 28 days with the 28 before and with the usual month over the past year.</span></li>
+      <li><span><b>The doom meter</b>A needle built from five signals: frequency, staying high, spreading wider, pile-ups and slow recovery.</span></li>
+      <li><span><b>A clickable timeline</b>A scrolling row of dates with a dot for every day something broke. Tap a dot to read what happened.</span></li>
+      <li><span><b>Causes and AI links</b>Each outage is tagged with a cause when one is known, and with whether AI was tied to it.</span></li>
+      <li><span><b>Honest about limits</b>Commentary and officials' reactions are filtered out, and the page says plainly where the data is sampled.</span></li>
+    </ol>
+    <h3 class="mono">Built with</h3>
+    <div class="stack"><span>Python</span><span>Google News RSS</span><span>Status page feeds</span><span>d3</span><span>GitHub Actions</span><span>GitHub Pages</span></div>
+    <div class="pv-cta">
+      <a class="go" href="https://robbiestells.github.io/Doomed/">Check if we’re doomed ↗</a>
+    </div>
+    <p class="beta-note">The news data before November 12 comes from a sampled search, so the trend is a first reading while daily collection builds up.</p>
+  </div>
+</div>
+</template>
+
 <template id="pv-noche-azul">
 <div class="pv-grid g-na" style="--pc:#0b1433;--pi:#f4ecd8">
   <div class="pv-demo th-na">
